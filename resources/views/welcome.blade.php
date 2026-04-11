@@ -207,12 +207,12 @@
     {{-- end excellence --}}
 
     {{-- about us --}}
-    <section id="tentang-kami" class="relative overflow-hidden bg-cover bg-center py-12 md:pt-20 px-6"
+    <section id="tentang-kami" class="relative overflow-hidden bg-cover bg-center py-12 md:pt-20 md:pb-0 px-6"
         style="background-image: url('{{ asset('images/bg-net.jpg') }}')">
 
         <div class="absolute top-0 left-0 w-full h-full bg-white/70"></div>
 
-        <div class="relative grid md:grid-cols-2 items-center gap-10">
+        <div class="relative grid md:grid-cols-2 items-center gap-10 max-w-7xl mx-auto">
             <div class="">
                 <div class="w-full h-full bg-primary rounded-full flex items-center justify-center">
                     <img src="/images/person-aboutus.png" alt="">
