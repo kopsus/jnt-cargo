@@ -1,5 +1,6 @@
 <x-layout>
-    <section class="relative overflow-hidden bg-cover bg-center py-12 md:py-20 px-4 md:px-6"
+    {{-- hero --}}
+    <section id="home" class="relative overflow-hidden bg-cover bg-center py-12 md:py-20 px-4 md:px-6"
         style="background-image: url('{{ asset('images/bg-net.jpg') }}')">
 
         <div class="absolute top-0 left-0 w-full h-full bg-white/80"></div>
@@ -38,18 +39,19 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide flex justify-center items-center">
                             <img src="{{ asset('images/motor.png') }}" alt="Motor J&T 1"
-                                class="w-full drop-shadow-2xl object-contain">
+                                class="w-full h-full drop-shadow-2xl object-contain">
                         </div>
 
                         <div class="swiper-slide flex justify-center items-center">
                             <img src="{{ asset('images/motor2.png') }}" alt="Motor J&T 2"
-                                class="w-full drop-shadow-2xl object-contain">
+                                class="w-full h-full drop-shadow-2xl object-contain">
                         </div>
 
                         <div class="swiper-slide flex justify-center items-center">
-                            <img src="{{ asset('images/motor.png') }}" alt="Motor J&T 3"
-                                class="w-full drop-shadow-2xl object-contain">
+                            <img src="{{ asset('images/motor3.png') }}" alt="Motor J&T 2"
+                                class="w-full h-full drop-shadow-2xl object-contain">
                         </div>
+
                     </div>
                 </div>
 
@@ -61,7 +63,7 @@
     {{-- end hero --}}
 
     {{-- cek ongkos --}}
-    <section class="py-12 md:py-20 px-4 md:px-6 bg-primary">
+    <section id="cek-ongkir" class="py-12 md:py-20 px-4 md:px-6 bg-primary">
         <div class="w-full md:w-10/12 max-w-7xl mx-auto">
 
             <div class="text-center text-white space-y-2 md:space-y-4">
@@ -179,17 +181,23 @@
             </p>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white text-primary p-6 shadow rounded-xl space-y-2">
-                    <div class="w-10 h-10 rounded-full bg-primary"></div>
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-truck text-primary"></i>
+                    </div>
                     <p class="text-2xl font-bold">Layanan Pickup</p>
                     <p>Tidak sempat antar barang ke gudang? Kami siap jemput langsung ke lokasi Anda!</p>
                 </div>
                 <div class="bg-white text-primary p-6 shadow rounded-xl space-y-2">
-                    <div class="w-10 h-10 rounded-full bg-primary"></div>
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-bolt text-primary"></i>
+                    </div>
                     <p class="text-2xl font-bold">Pengiriman Cepat</p>
                     <p>Dengan layanan one day service kita dapat mengirim dengan jaminan 1 hari sampai</p>
                 </div>
                 <div class="bg-white text-primary p-6 shadow rounded-xl space-y-2">
-                    <div class="w-10 h-10 rounded-full bg-primary"></div>
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-tags text-primary"></i>
+                    </div>
                     <p class="text-2xl font-bold">Harga Murah</p>
                     <p>Pengiriman cargo termurah dengan layanan prima</p>
                 </div>
@@ -199,7 +207,7 @@
     {{-- end excellence --}}
 
     {{-- about us --}}
-    <section class="relative overflow-hidden bg-cover bg-center py-12 md:pt-20 px-6"
+    <section id="tentang-kami" class="relative overflow-hidden bg-cover bg-center py-12 md:pt-20 px-6"
         style="background-image: url('{{ asset('images/bg-net.jpg') }}')">
 
         <div class="absolute top-0 left-0 w-full h-full bg-white/70"></div>
@@ -224,7 +232,7 @@
     {{-- end about us --}}
 
     {{-- services --}}
-    <section class="py-12 md:py-20 px-6 bg-primary">
+    <section id="layanan" class="py-12 md:py-20 px-6 bg-primary">
         <div class="w-full max-w-7xl mx-auto">
             <div class="space-y-4 text-center text-white">
                 <p class="text-3xl md:text-5xl font-bold text-center">Layanan Kami</p>

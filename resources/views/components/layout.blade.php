@@ -8,6 +8,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -37,17 +43,25 @@
             <nav class="hidden lg:block">
                 <ul class="flex space-x-8">
                     <li>
-                        <a href="/"
-                            class="{{ request()->is('/') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">
-                            Home
-                        </a>
+                        <a href="/" class="nav-link hover:text-primary transition" data-target="home">Home</a>
                     </li>
-                    <li><a href="#" class="hover:text-primary transition">Layanan</a></li>
-                    <li><a href="#" class="hover:text-primary transition">Tentang Kami</a></li>
-                    <li><a href="/article"
+                    <li>
+                        <a href="/#layanan" class="nav-link hover:text-primary transition"
+                            data-target="layanan">Layanan</a>
+                    </li>
+                    <li>
+                        <a href="/#tentang-kami" class="nav-link hover:text-primary transition"
+                            data-target="tentang-kami">Tentang Kami</a>
+                    </li>
+                    <li>
+                        <a href="/#cek-ongkir" class="nav-link hover:text-primary transition"
+                            data-target="cek-ongkir">Cek Ongkir</a>
+                    </li>
+
+                    <li>
+                        <a href="/article"
                             class="{{ request()->is('article') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">Artikel</a>
                     </li>
-                    <li><a href="#" class="hover:text-primary transition">Cek Ongkir</a></li>
                 </ul>
             </nav>
 
@@ -93,10 +107,10 @@
     </main>
 
     {{-- footer --}}
-    <footer class="bg-primary py-10 px-6">
+    <footer class="bg-footer py-10 px-6">
         <div class="w-full max-w-7xl mx-auto text-center text-white grid md:grid-cols-3 lg:grid-cols-4 gap-10">
             <div class="lg:col-span-2 space-y-8 text-start">
-                <img src="/images/logo.png" alt="" class="w-1/2">
+                <img src="/images/logo-primary.png" alt="" class="w-1/2">
                 <p>J&T Cargo Yogyakarta siap membantu Anda mengirim barang besar maupun motor dari Jogja ke seluruh
                     Indonesia dengan lebih mudah.</p>
                 <div class="flex items-center gap-4">
