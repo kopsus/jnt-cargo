@@ -260,33 +260,58 @@
     {{-- end services --}}
 
     {{-- outlet location --}}
-    <section class="py-12 px-6 md:py-20">
+    <section class="py-12 px-6 md:py-20 h-full">
         <div class="w-full max-w-7xl mx-auto">
 
             <p class="text-3xl md:text-5xl font-bold text-primary text-center">Lokasi Outlet</p>
-            <div class="w-full md:w-9/12 mx-auto grid md:grid-cols-2 gap-10 mt-12">
-                <div class="w-full min-h-75 lg:h-full rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.49891295245!2d110.315516!3d-7.778841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5840695079a7%3A0xc3ce1e4288b835e!2sJl.%20Magelang%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+            <div class="grid lg:grid-cols-2 gap-8 mt-10">
+                <div class="w-full space-y-4">
+                    <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.49891295245!2d110.315516!3d-7.778841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5840695079a7%3A0xc3ce1e4288b835e!2sJl.%20Magelang%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="space-y-6 text-primary">
+                        <div class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-primary text-2xl"></i>
+                            <p class="lg:text-xl">Jl. Suryopranoto No.5D, Gunungketur, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55111</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fa-solid fa-phone text-primary text-2xl"></i>
+                            <p class="lg:text-xl">Wa/Telp : 0821-3737-2800</p>
+                        </div>
+                        <button
+                            class="mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            Hubungi Kami
+                        </button>
+                    </div>
                 </div>
-                <div class="space-y-6 text-primary">
-                    <p class="text-3xl font-bold">PT Sudaya Logistik Indonesia</p>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-location-dot text-primary text-2xl"></i>
-                        <p class="text-xl">Jl. Magelang No. 123, Yogyakarta</p>
+                <div class="w-full space-y-4">
+                    <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.49891295245!2d110.315516!3d-7.778841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5840695079a7%3A0xc3ce1e4288b835e!2sJl.%20Magelang%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-phone text-primary text-2xl"></i>
-                        <p class="text-xl">Wa/Telp : 0821-3737-2800</p>
+                    <div class="space-y-6 text-primary">
+                        <div class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-primary text-2xl"></i>
+                            <p class="lg:text-xl">Tikungan Jl. Purbaya, Paten, Tridadi, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55511, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55111</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i class="fa-solid fa-phone text-primary text-2xl"></i>
+                            <p class="lg:text-xl">Wa/Telp : 0821-3737-2800</p>
+                        </div>
+                        <button
+                            class="mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            Hubungi Kami
+                        </button>
                     </div>
-                    <button
-                        class="mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
-                        Hubungi Kami
-                    </button>
                 </div>
             </div>
         </div>

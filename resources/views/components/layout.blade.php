@@ -114,9 +114,12 @@
                 <p>J&T Cargo Yogyakarta siap membantu Anda mengirim barang besar maupun motor dari Jogja ke seluruh
                     Indonesia dengan lebih mudah.</p>
                 <div class="flex items-center gap-4">
-                    <i class="fa-brands fa-instagram text-2xl"></i>
-                    <i class="fa-brands fa-tiktok text-2xl"></i>
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <a href="https://www.instagram.com/daya.log/" target="_blank">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/daya.log/" target="_blank">
+                        <i class="fa-brands fa-tiktok text-2xl"></i>
+                    </a>
                 </div>
             </div>
             <div class="col-span-1 text-start">
