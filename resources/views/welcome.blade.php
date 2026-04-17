@@ -268,49 +268,52 @@
                 <div class="w-full space-y-4">
                     <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.49891295245!2d110.315516!3d-7.778841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5840695079a7%3A0xc3ce1e4288b835e!2sJl.%20Magelang%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8971281994645!2d110.37797839999999!3d-7.8007149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f56ab42d0b%3A0x7300f64e0fe3214b!2sJ%26T%20Cargo%20Pakualaman!5e0!3m2!1sid!2sid!4v1776431730206!5m2!1sid!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="space-y-6 text-primary">
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-location-dot text-primary text-2xl"></i>
-                            <p class="lg:text-xl">Jl. Suryopranoto No.5D, Gunungketur, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55111</p>
+                    <div class="space-y-4 text-primary flex items-start flex-col">
+                        <p class="text-xl font-semibold">Kantor Utama</p>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot text-primary text-xl"></i>
+                            <p class="text-lg">Jl. Suryopranoto No.5D, Gunungketur, Pakualaman, Kota Yogyakarta,
+                                Daerah Istimewa Yogyakarta 55111</p>
                         </div>
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-phone text-primary text-2xl"></i>
-                            <p class="lg:text-xl">Wa/Telp : 0821-3737-2800</p>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone text-primary text-xl"></i>
+                            <p class="text-lg">Wa/Telp : 082147259393</p>
                         </div>
-                        <button
+                        <a href="https://wa.me/6282147259393" target="_blank"
                             class="mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg">
                             <i class="fa-brands fa-whatsapp text-2xl"></i>
                             Hubungi Kami
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="w-full space-y-4">
                     <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.49891295245!2d110.315516!3d-7.778841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5840695079a7%3A0xc3ce1e4288b835e!2sJl.%20Magelang%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.7224208458047!2d110.3432938!3d-7.7129048000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5f82e51ac881%3A0x68a33dfeb847fba2!2sLion%20Parcel%20-%20Purbaya%202!5e0!3m2!1sid!2sid!4v1776431783610!5m2!1sid!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="space-y-6 text-primary">
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-location-dot text-primary text-2xl"></i>
-                            <p class="lg:text-xl">Tikungan Jl. Purbaya, Paten, Tridadi, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55511, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55111</p>
+                    <div class="space-y-4 text-primary items-start flex flex-col">
+                        <p class="text-xl font-semibold">Kantor Cabang</p>
+
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot text-primary text-xl"></i>
+                            <p class="text-lg">Tikungan Jl. Purbaya, Paten, Tridadi, Kec. Sleman, Kabupaten Sleman,
+                                Daerah Istimewa Yogyakarta 55511, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55111</p>
                         </div>
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-phone text-primary text-2xl"></i>
-                            <p class="lg:text-xl">Wa/Telp : 0821-3737-2800</p>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone text-primary text-xl"></i>
+                            <p class="text-lg">Wa/Telp : 628137902309</p>
                         </div>
-                        <button
+                        <a href="https://wa.me/628137902309" target="_blank"
                             class="mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg">
                             <i class="fa-brands fa-whatsapp text-2xl"></i>
                             Hubungi Kami
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
