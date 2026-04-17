@@ -18,20 +18,32 @@
 
 <body>
     {{-- header --}}
-    <div class="bg-primary py-3 md:py-4">
-        <div
-            class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
-            <p class="text-white text-sm md:text-base text-center">Hubungi Sekarang Untuk Diskon 30% Spesial Ramadhan!
-            </p>
+    @php
+        // Ambil semua voucher yang aktif dari database
+        $vouchers = \App\Models\Voucher::where('is_active', true)->get();
+    @endphp
 
-            <div class="flex items-center gap-4">
-                <button
-                    class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base">Klaim
-                    Sekarang</button>
-                <p class="text-secondary font-bold text-xl md:text-3xl">00:09:21</p>
+    @if ($vouchers->count() > 0)
+        <div class="bg-primary py-3 md:py-4" id="voucher-banner">
+            <div
+                class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+                <p id="voucher-title" class="text-white text-sm md:text-base text-center">
+                    Memuat promo...
+                </p>
+
+                <div class="flex items-center gap-4">
+                    <a id="voucher-link" href="#" target="_blank"
+                        class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base transition hover:bg-white">
+                        Klaim Sekarang
+                    </a>
+
+                    <p id="voucher-timer" class="text-secondary font-bold text-xl md:text-3xl">
+                        00:00:00
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    @endif
 
     <header class="bg-white py-4 shadow z-50 relative">
         <div class="w-full max-w-7xl px-4 md:px-6 mx-auto flex items-center justify-between">
@@ -145,13 +157,74 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // mobile menu script
         const btnMobileMenu = document.getElementById('btn-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
 
         btnMobileMenu.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // voucher banner script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ambil data voucher dari PHP ke JavaScript
+            const vouchers = @json($vouchers);
+
+            let currentIndex = 0;
+            let timeRemaining = 0;
+            let timerInterval;
+
+            const titleEl = document.getElementById('voucher-title');
+            const linkEl = document.getElementById('voucher-link');
+            const timerEl = document.getElementById('voucher-timer');
+
+            // Fungsi untuk memformat waktu ke HH:MM:SS
+            function formatTime(seconds) {
+                const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+                const m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+                const s = (seconds % 60).toString().padStart(2, '0');
+                return `${h}:${m}:${s}`;
+            }
+
+            // Fungsi untuk menampilkan voucher aktif saat ini
+            function showVoucher(index) {
+                const v = vouchers[index];
+
+                // Set teks judul
+                titleEl.innerText = v.title;
+
+                // Set link WhatsApp (encode text agar aman di URL)
+                const waUrl = `https://wa.me/${v.whatsapp_number}?text=${encodeURIComponent(v.whatsapp_text)}`;
+                linkEl.setAttribute('href', waUrl);
+
+                // Set durasi waktu (dari menit ke detik)
+                timeRemaining = v.duration_minutes * 60;
+                timerEl.innerText = formatTime(timeRemaining);
+            }
+
+            // Fungsi hitung mundur
+            function startTimer() {
+                timerInterval = setInterval(() => {
+                    timeRemaining--;
+                    timerEl.innerText = formatTime(timeRemaining);
+
+                    // Jika waktu habis, ganti ke voucher berikutnya
+                    if (timeRemaining <= 0) {
+                        currentIndex = (currentIndex + 1) % vouchers.length;
+                        showVoucher(currentIndex);
+                    }
+                }, 1000);
+            }
+
+            // Inisiasi Pertama Kali
+            if (vouchers.length > 0) {
+                showVoucher(currentIndex);
+                startTimer();
+            }
+        });
     </script>
+
+
 </body>
 
 </html>
