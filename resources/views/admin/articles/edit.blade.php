@@ -1,7 +1,7 @@
 <x-admin-layout>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
 
-    <div class="space-y-6 max-w-5xl mx-auto pb-12">
+    <div class="space-y-6">
         <div class="flex items-center justify-between">
             <h1 class="text-3xl font-bold text-gray-800">Edit Artikel</h1>
             <a href="/admin/articles"

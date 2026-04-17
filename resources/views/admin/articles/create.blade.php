@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <div class="space-y-6 max-w-5xl mx-auto pb-12">
+    <div class="space-y-6">
 
         <div class="flex items-center justify-between">
             <h1 class="text-3xl font-bold text-gray-800">Tambah Artikel Baru</h1>

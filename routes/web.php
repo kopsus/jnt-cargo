@@ -4,6 +4,7 @@ use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VoucherController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,4 +37,12 @@ Route::prefix('admin')->group(function () {
     // users
     Route::get('/users', [UserController::class, 'index']); 
 
+
+    // vouchers
+    Route::get('/vouchers', [App\Http\Controllers\VoucherController::class, 'index']);
+    Route::get('/vouchers/create', [App\Http\Controllers\VoucherController::class, 'create']);
+    Route::post('/vouchers', [App\Http\Controllers\VoucherController::class, 'store']);
+    Route::get('/vouchers/{id}/edit', [App\Http\Controllers\VoucherController::class, 'edit']);
+    Route::put('/vouchers/{id}', [App\Http\Controllers\VoucherController::class, 'update']);
+    Route::delete('/vouchers/{id}', [App\Http\Controllers\VoucherController::class, 'destroy']);
 });

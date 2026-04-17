@@ -28,10 +28,15 @@
                 <i class="fa-solid fa-newspaper w-5"></i>
                 Artikel
             </a>
-            <a href="#"
-                class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/users*') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
+            <a href="/admin/users"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/users') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
                 <i class="fa-solid fa-users w-5"></i>
-                Manajemen User
+                User
+            </a>
+            <a href="/admin/vouchers"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/vouchers*') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
+                <i class="fa-solid fa-tags w-5"></i>
+                Voucher
             </a>
         </nav>
 
