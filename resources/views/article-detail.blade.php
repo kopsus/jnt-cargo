@@ -20,10 +20,10 @@
             </div>
 
             @if ($article->thumbnail)
-                <div class="w-full h-64 md:h-112.5 bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-                    <img src="{{ Storage::url($article->thumbnail) }}" alt="{{ $article->title }}"
-                        class="w-full h-full object-cover">
-                </div>
+            <div class="w-full h-64 md:h-112.5 bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+                <img src="{{ Storage::url($article->thumbnail) }}" alt="{{ $article->title }}"
+                    class="w-full h-full object-cover">
+            </div>
             @endif
 
             <div class="text-gray-800 text-lg leading-relaxed space-y-6">

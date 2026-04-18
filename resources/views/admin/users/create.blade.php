@@ -1,7 +1,7 @@
 <x-admin-layout>
     @if (session('success'))
     <div
-        class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative flex items-center gap-3 shadow-sm">
+        class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative flex items-center gap-3 shadow-sm mb-6">
         <i class="fa-solid fa-circle-check text-xl"></i>
         <span class="block sm:inline font-medium">{{ session('success') }}</span>
     </div>
@@ -10,8 +10,8 @@
     <div class="space-y-6">
 
         <div class="flex items-center justify-between">
-            <h1 class="text-3xl font-bold text-gray-800">Tambah Voucher Baru</h1>
-            <a href="/admin/vouchers"
+            <h1 class="text-3xl font-bold text-gray-800">Tambah User Baru</h1>
+            <a href="{{ route('admin.users.index') }}"
                 class="text-gray-500 hover:text-primary transition flex items-center gap-2 font-medium">
                 <i class="fa-solid fa-arrow-left"></i> Kembali
             </a>
@@ -31,63 +31,49 @@
                 </ul>
             </div>
             @endif
-            <form id="voucher-form" action="/admin/vouchers" method="POST" enctype="multipart/form-data"
-                class="space-y-6">
 
+            <form action="{{ route('admin.users.store') }}" method="POST" class="space-y-6">
                 @csrf
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
-                        <label for="title" class="font-medium text-gray-700">Judul Voucher<span
+                        <label for="name" class="font-medium text-gray-700">Nama Lengkap<span
                                 class="text-red-500">*</span></label>
-                        <input type="text" id="title" name="title" placeholder="Masukkan judul..." required
+                        <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Masukkan nama..." required
                             class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
                     </div>
 
                     <div class="space-y-2">
-                        <label for="whatsapp_number" class="font-medium text-gray-700">No WhatsApp<span
+                        <label for="email" class="font-medium text-gray-700">Email<span
                                 class="text-red-500">*</span></label>
-                        <input type="text" id="whatsapp_number" name="whatsapp_number"
-                            placeholder="Masukkan nomor WhatsApp..." required
+                        <input type="email" id="email" name="email" value="{{ old('email') }}"
+                            placeholder="Masukkan email..." required
                             class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
-                        <label for="whatsapp_text" class="font-medium text-gray-700">Teks WhatsApp<span
+                        <label for="password" class="font-medium text-gray-700">Password<span
                                 class="text-red-500">*</span></label>
-                        <input type="text" id="whatsapp_text" name="whatsapp_text"
-                            placeholder="Masukkan teks WhatsApp..." required
+                        <input type="password" id="password" name="password"
+                            placeholder="Masukkan password..." required
                             class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
                     </div>
 
                     <div class="space-y-2">
-                        <label for="duration_minutes" class="font-medium text-gray-700">Durasi (menit)<span
+                        <label for="password_confirmation" class="font-medium text-gray-700">Konfirmasi Password<span
                                 class="text-red-500">*</span></label>
-                        <input type="number" id="duration_minutes" name="duration_minutes"
-                            placeholder="Masukkan durasi..." required
+                        <input type="password" id="password_confirmation" name="password_confirmation"
+                            placeholder="Ulangi password..." required
                             class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition">
                     </div>
                 </div>
 
-                <div class="space-y-2">
-                    <label class="font-medium text-gray-700">Aktif<span class="text-red-500">*</span></label>
-                    <div class="flex items-center gap-6">
-                        <label class="flex items-center gap-2">
-                            <input type="radio" name="is_active" value="1" class="form-radio text-primary"
-                                checked>
-                            <span class="text-gray-700">Ya</span>
-                    </div>
-                    <label class="flex items-center gap-2">
-                        <input type="radio" name="is_active" value="0" class="form-radio text-primary">
-                        <span class="text-gray-700">Tidak</span>
-                    </label>
-                </div>
                 <div class="pt-4 flex justify-end">
                     <button type="submit"
                         class="bg-primary hover:bg-green-700 transition text-white font-bold py-3 px-8 rounded-lg shadow-lg flex items-center gap-2">
-                        <i class="fa-solid fa-save"></i> Simpan Voucher
+                        <i class="fa-solid fa-save"></i> Simpan User
                     </button>
                 </div>
 
@@ -95,6 +81,4 @@
         </div>
 
     </div>
-
-
 </x-admin-layout>

@@ -29,7 +29,7 @@
                 Artikel
             </a>
             <a href="/admin/users"
-                class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/users') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/users*') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
                 <i class="fa-solid fa-users w-5"></i>
                 User
             </a>
@@ -51,7 +51,6 @@
     </aside>
 
     <div class="flex-1 flex flex-col h-full relative overflow-y-auto">
-
         <header class="h-16 bg-white shadow flex items-center justify-between px-6 sticky top-0 z-10">
             <button class="md:hidden text-primary text-2xl">
                 <i class="fa-solid fa-bars"></i>
@@ -60,14 +59,12 @@
                 <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-primary">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                <span class="font-medium">Halo, Admin!</span>
+                <span class="font-medium">Halo, {{ auth()->user()->name }}!</span>
             </div>
         </header>
-
         <main class="p-6">
             {{ $slot }}
         </main>
-
     </div>
 
 </body>

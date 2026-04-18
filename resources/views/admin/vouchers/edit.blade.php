@@ -11,13 +11,13 @@
 
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden p-6 md:p-8">
             @if ($errors->any())
-                <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg">
-                    <ul class="list-disc pl-8 text-red-600 text-sm">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg">
+                <ul class="list-disc pl-8 text-red-600 text-sm">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
 
             <form id="voucher-form" action="/admin/vouchers/{{ $voucher->id }}" method="POST"

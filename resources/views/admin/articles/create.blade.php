@@ -2,11 +2,11 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
 
     @if (session('success'))
-        <div
-            class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative flex items-center gap-3 shadow-sm">
-            <i class="fa-solid fa-circle-check text-xl"></i>
-            <span class="block sm:inline font-medium">{{ session('success') }}</span>
-        </div>
+    <div
+        class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative flex items-center gap-3 shadow-sm">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <span class="block sm:inline font-medium">{{ session('success') }}</span>
+    </div>
     @endif
 
     <div class="space-y-6">
@@ -21,17 +21,17 @@
 
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden p-6 md:p-8">
             @if ($errors->any())
-                <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg">
-                    <div class="flex items-center">
-                        <i class="fa-solid fa-circle-exclamation text-red-500 mr-3 text-lg"></i>
-                        <p class="text-red-700 font-bold">Oops! Ada kesalahan pada inputanmu:</p>
-                    </div>
-                    <ul class="list-disc pl-8 mt-2 text-red-600 text-sm">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-circle-exclamation text-red-500 mr-3 text-lg"></i>
+                    <p class="text-red-700 font-bold">Oops! Ada kesalahan pada inputanmu:</p>
                 </div>
+                <ul class="list-disc pl-8 mt-2 text-red-600 text-sm">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
             <form id="article-form" action="/admin/articles" method="POST" enctype="multipart/form-data"
                 class="space-y-6">
