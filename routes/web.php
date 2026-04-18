@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TrackingController;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
@@ -29,6 +30,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 // RUTE UNTUK CMS ADMIN (Sekarang SEMUA dilindungi password)
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
+    // Dashboard
     Route::get('/dashboard', function () {
         $totalArticles = Article::count();
         $totalVouchers = Voucher::count();
@@ -55,4 +57,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // Users (Menggunakan Resource Route)
     Route::resource('users', UserController::class)->except(['show'])->names('admin.users');
+
+    // Tracking
+    Route::resource('trackings', TrackingController::class)->names('admin.trackings');
 });

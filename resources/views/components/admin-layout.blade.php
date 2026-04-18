@@ -38,6 +38,10 @@
                 <i class="fa-solid fa-tags w-5"></i>
                 Voucher
             </a>
+            <a href="/admin/trackings"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/tracking*') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
+                <i class="fa-solid fa-map-location-dot w-5"></i> Cek Resi
+            </a>
         </nav>
 
         <form action="/logout" method="POST" class="p-4 border-t border-green-800">
