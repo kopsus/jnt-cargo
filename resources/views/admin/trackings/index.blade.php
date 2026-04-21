@@ -20,6 +20,7 @@
                     <tr>
                         <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase">No Resi</th>
                         <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase">Status</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase">Catatan</th>
                         <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase">Update Terakhir</th>
                         <th class="px-6 py-4 text-center text-xs font-bold text-gray-500 uppercase">Aksi</th>
                     </tr>
@@ -43,6 +44,9 @@
                             <span class="px-3 py-1 rounded-full text-xs font-bold {{ $colors[$track->status] ?? 'bg-gray-100' }}">
                                 {{ $track->status }}
                             </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ $track->catatan }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {{ $track->created_at->format('d M Y, H:i') }}

@@ -74,6 +74,11 @@
                         <a href="/article"
                             class="{{ request()->is('article') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">Artikel</a>
                     </li>
+
+                    <li>
+                        <a href="/cek-resi"
+                            class="{{ request()->is('cek-resi') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">Cek Resi</a>
+                    </li>
                 </ul>
             </nav>
 

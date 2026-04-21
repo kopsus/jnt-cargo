@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Models\User;
 use App\Models\Voucher;
+use App\Models\Tracking;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,12 +24,24 @@ Route::get('/article/{slug}', function ($slug) {
     return view('article-detail', compact('article'));
 });
 
-// RUTE UNTUK CMS ADMIN
+// TRACKING
+Route::get('/cek-resi', function (Request $request) {
+    $resi = $request->query('resi');
+    $trackings = null;
+
+    if ($resi) {
+        $trackings = Tracking::where('no_resi', $resi)->orderBy('created_at', 'desc')->get();
+    }
+
+    return view('cek-resi', compact('trackings', 'resi'));
+});
+
+// AUTH
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
-// RUTE UNTUK CMS ADMIN (Sekarang SEMUA dilindungi password)
+// RUTE UNTUK CMS ADMIN
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // Dashboard
