@@ -1,14 +1,15 @@
 <?php
 
 use App\Http\Controllers\TrackingController;
-use App\Models\Article;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Models\User;
+use App\Models\Article;
 use App\Models\Voucher;
 use App\Models\Tracking;
+use App\Models\Ongkir;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -34,6 +35,17 @@ Route::get('/cek-resi', function (Request $request) {
     }
 
     return view('cek-resi', compact('trackings', 'resi'));
+});
+
+// ONGKIR
+Route::get('/cek-ongkir', function () {
+    // Ambil data unik Kabupaten untuk Dropdown pertama
+    $kabupatens = Ongkir::select('kabupaten')->distinct()->orderBy('kabupaten')->get();
+
+    // Ambil seluruh data ongkir untuk logika JavaScript
+    $ongkirs = Ongkir::all();
+
+    return view('cek-ongkir', compact('kabupatens', 'ongkirs'));
 });
 
 // AUTH
