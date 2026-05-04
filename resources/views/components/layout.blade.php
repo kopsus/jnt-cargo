@@ -19,30 +19,30 @@
 <body>
     {{-- header --}}
     @php
-    // Ambil semua voucher yang aktif dari database
-    $vouchers = \App\Models\Voucher::where('is_active', true)->get();
+        // Ambil semua voucher yang aktif dari database
+        $vouchers = \App\Models\Voucher::where('is_active', true)->get();
     @endphp
 
     @if ($vouchers->count() > 0)
-    <div class="bg-primary py-3 md:py-4" id="voucher-banner">
-        <div
-            class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
-            <p id="voucher-title" class="text-white text-sm md:text-base text-center">
-                Memuat promo...
-            </p>
-
-            <div class="flex items-center gap-4">
-                <a id="voucher-link" href="#" target="_blank"
-                    class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base transition hover:bg-white">
-                    Klaim Sekarang
-                </a>
-
-                <p id="voucher-timer" class="text-secondary font-bold text-xl md:text-3xl">
-                    00:00:00
+        <div class="bg-primary py-3 md:py-4" id="voucher-banner">
+            <div
+                class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+                <p id="voucher-title" class="text-white text-sm md:text-base text-center">
+                    Memuat promo...
                 </p>
+
+                <div class="flex items-center gap-4">
+                    <a id="voucher-link" href="#" target="_blank"
+                        class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base transition hover:bg-white">
+                        Klaim Sekarang
+                    </a>
+
+                    <p id="voucher-timer" class="text-secondary font-bold text-xl md:text-3xl">
+                        00:00:00
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
     @endif
 
     <header class="bg-white py-4 shadow z-50 relative">
@@ -66,8 +66,9 @@
                             data-target="tentang-kami">Tentang Kami</a>
                     </li>
                     <li>
-                        <a href="/#cek-ongkir" class="nav-link hover:text-primary transition"
-                            data-target="cek-ongkir">Cek Ongkir</a>
+                        <a href="/cek-ongkir"
+                            class="{{ request()->is('cek-ongkir') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">Cek
+                            Ongkir</a>
                     </li>
 
                     <li>
@@ -77,7 +78,8 @@
 
                     <li>
                         <a href="/cek-resi"
-                            class="{{ request()->is('cek-resi') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">Cek Resi</a>
+                            class="{{ request()->is('cek-resi') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">Cek
+                            Resi</a>
                     </li>
                 </ul>
             </nav>
@@ -107,7 +109,14 @@
                     class="{{ request()->is('article') ? 'font-bold text-primary' : 'text-gray-700 hover:text-primary transition' }}">
                     Artikel
                 </a>
-                <a href="#" class="text-gray-700 hover:text-primary border-b border-gray-100 pb-2">Cek Ongkir</a>
+                <a href="/cek-ongkir"
+                    class="{{ request()->is('cek-ongkir') ? 'font-bold text-primary' : 'text-gray-700 hover:text-primary transition' }}">
+                    Cek Ongkir
+                </a>
+                <a href="/cek-resi"
+                    class="{{ request()->is('cek-resi') ? 'font-bold text-primary' : 'text-gray-700 hover:text-primary transition' }}">
+                    Cek Resi
+                </a>
 
                 <button
                     class="mt-2 w-full bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex justify-center items-center gap-2 shadow-lg">
