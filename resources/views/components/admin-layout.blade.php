@@ -42,6 +42,10 @@
                 class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/tracking*') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
                 <i class="fa-solid fa-map-location-dot w-5"></i> Cek Resi
             </a>
+            <a href="/admin/pickups"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition {{ request()->is('admin/tracking*') ? 'bg-secondary text-primary font-bold' : 'hover:bg-green-700' }}">
+                <i class="fa-solid fa-truck-pickup"></i> Pickups
+            </a>
         </nav>
 
         <form action="/logout" method="POST" class="p-4 border-t border-green-800">

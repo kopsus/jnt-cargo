@@ -12,6 +12,7 @@ use App\Models\Tracking;
 use App\Models\Ongkir;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\PickupController as AdminPickupController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -91,4 +92,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // Tracking
     Route::resource('trackings', TrackingController::class)->names('admin.trackings');
+
+    // Pickups
+    Route::resource('pickups', AdminPickupController::class)->names('admin.pickups')->except(['create', 'store', 'show']);
 });

@@ -13,25 +13,38 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
                         <label class="font-medium text-gray-700">Nomor Resi <span class="text-red-500">*</span></label>
-                        <input type="text" name="no_resi" placeholder="Contoh: JNT12345678" required class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition">
+                        <!-- Menangkap data 'resi' dari URL jika ada -->
+                        <input type="text" name="no_resi" value="{{ old('no_resi', request('resi')) }}" placeholder="Contoh: JNT12345678" required class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition font-bold text-primary">
                     </div>
                     <div class="space-y-2">
                         <label class="font-medium text-gray-700">Status Pengiriman <span class="text-red-500">*</span></label>
                         <select name="status" required class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition">
-                            <option value="Menunggu Penjemputan">Menunggu Penjemputan</option>
-                            <option value="Paket Diproses">Paket Diproses</option>
-                            <option value="Dalam Perjalanan (Transit)">Dalam Perjalanan (Transit)</option>
-                            <option value="Dibawa Kurir">Dibawa Kurir</option>
-                            <option value="Paket Diterima">Paket Diterima</option>
-                            <option value="Gagal Kirim">Gagal Kirim</option>
-                            <option value="Dikembalikan (Retur)">Dikembalikan (Retur)</option>
+                            @php
+                            $statuses = [
+                            'Menunggu Penjemputan',
+                            'Paket Diproses',
+                            'Dalam Perjalanan (Transit)',
+                            'Dibawa Kurir',
+                            'Paket Diterima',
+                            'Gagal Kirim',
+                            'Dikembalikan (Retur)'
+                            ];
+                            @endphp
+
+                            @foreach($statuses as $status)
+                            <!-- Menangkap data 'status' dari URL jika ada -->
+                            <option value="{{ $status }}" {{ old('status', request('status')) == $status ? 'selected' : '' }}>
+                                {{ $status }}
+                            </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
 
                 <div class="space-y-2">
                     <label class="font-medium text-gray-700">Catatan Lokasi / Keterangan</label>
-                    <textarea name="catatan" rows="3" placeholder="Contoh: Paket sampai di hub Jakarta Barat" class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition"></textarea>
+                    <!-- Menangkap data 'catatan' dari URL jika ada -->
+                    <textarea name="catatan" rows="3" placeholder="Contoh: Paket sampai di hub Jakarta Barat" class="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition">{{ old('catatan', request('catatan')) }}</textarea>
                 </div>
 
                 <div class="flex justify-end pt-4">
