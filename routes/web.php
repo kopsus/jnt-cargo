@@ -48,6 +48,17 @@ Route::get('/cek-ongkir', function () {
     return view('cek-ongkir', compact('kabupatens', 'ongkirs'));
 });
 
+// PICKUP
+Route::get('/pickup', function () {
+    // Ambil data unik Kabupaten untuk Dropdown pertama
+    $kabupatens = Ongkir::select('kabupaten')->distinct()->orderBy('kabupaten')->get();
+
+    // Ambil seluruh data ongkir untuk logika JavaScript
+    $ongkirs = Ongkir::all();
+
+    return view('pickup', compact('kabupatens', 'ongkirs'));
+});
+
 // AUTH
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
