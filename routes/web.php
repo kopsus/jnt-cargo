@@ -4,6 +4,7 @@ use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PickupController;
 use App\Models\User;
 use App\Models\Article;
 use App\Models\Voucher;
@@ -49,15 +50,8 @@ Route::get('/cek-ongkir', function () {
 });
 
 // PICKUP
-Route::get('/pickup', function () {
-    // Ambil data unik Kabupaten untuk Dropdown pertama
-    $kabupatens = Ongkir::select('kabupaten')->distinct()->orderBy('kabupaten')->get();
-
-    // Ambil seluruh data ongkir untuk logika JavaScript
-    $ongkirs = Ongkir::all();
-
-    return view('pickup', compact('kabupatens', 'ongkirs'));
-});
+Route::get('/pickup', [PickupController::class, 'index'])->name('pickup.index');
+Route::post('/pickup', [PickupController::class, 'store'])->name('pickup.store');
 
 // AUTH
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
