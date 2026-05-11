@@ -19,6 +19,7 @@
 /storage/*.key
 /storage/pail
 /vendor
+/jnt_cargo.sql
 _ide_helper.php
 Homestead.json
 Homestead.yaml
