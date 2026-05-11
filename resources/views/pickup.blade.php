@@ -6,14 +6,15 @@
 
             <!-- Tambahkan penampil pesan error ini agar kita tahu kalau ada yang salah -->
             @if ($errors->any())
-            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg w-full max-w-7xl mx-auto">
-                <p class="font-bold">Oops! Ada yang terlewat:</p>
-                <ul class="list-disc pl-5 text-sm mt-1">
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+                <div
+                    class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg w-full max-w-7xl mx-auto">
+                    <p class="font-bold">Oops! Ada yang terlewat:</p>
+                    <ul class="list-disc pl-5 text-sm mt-1">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
 
             <form action="{{ route('pickup.store') }}" method="POST" class="space-y-6 flex flex-col justify-center">
@@ -23,10 +24,11 @@
                         <label class="text-lg md:text-xl font-medium text-white">Kota Tujuan</label>
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
                             <!-- Tambahkan name="kota_tujuan" -->
-                            <select id="kabupaten" name="kota_tujuan" class="w-full text-black outline-none bg-transparent">
+                            <select id="kabupaten" name="kota_tujuan"
+                                class="w-full text-black outline-none bg-transparent">
                                 <option value="">-- Pilih Kabupaten / Kota --</option>
-                                @foreach($kabupatens as $kab)
-                                <option value="{{ $kab->kabupaten }}">{{ $kab->kabupaten }}</option>
+                                @foreach ($kabupatens as $kab)
+                                    <option value="{{ $kab->kabupaten }}">{{ $kab->kabupaten }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -36,7 +38,8 @@
                         <label class="text-lg md:text-xl font-medium text-white">Kecamatan</label>
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
                             <!-- Tambahkan name="kecamatan_tujuan" -->
-                            <select id="kecamatan" name="kecamatan_tujuan" disabled class="w-full text-black outline-none bg-transparent">
+                            <select id="kecamatan" name="kecamatan_tujuan" disabled
+                                class="w-full text-black outline-none bg-transparent">
                                 <option value="">-- Pilih Kecamatan --</option>
                             </select>
                         </div>
@@ -58,10 +61,11 @@
                         <label class="text-lg md:text-xl font-medium text-white">Kota Pengambilan</label>
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
                             <!-- Tambahkan name="kota_pengambilan" -->
-                            <select id="kabupaten2" name="kota_pengambilan" class="w-full text-black outline-none bg-transparent">
+                            <select id="kabupaten2" name="kota_pengambilan"
+                                class="w-full text-black outline-none bg-transparent">
                                 <option value="">-- Pilih Kabupaten / Kota --</option>
-                                @foreach($kabupatens as $kab)
-                                <option value="{{ $kab->kabupaten }}">{{ $kab->kabupaten }}</option>
+                                @foreach ($kabupatens as $kab)
+                                    <option value="{{ $kab->kabupaten }}">{{ $kab->kabupaten }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -82,7 +86,8 @@
                         <label class="text-lg md:text-xl font-medium text-white">Kecamatan</label>
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
                             <!-- Tambahkan name="kecamatan_pengambilan" -->
-                            <select id="kecamatan2" name="kecamatan_pengambilan" disabled class="w-full text-black outline-none bg-transparent">
+                            <select id="kecamatan2" name="kecamatan_pengambilan" disabled
+                                class="w-full text-black outline-none bg-transparent">
                                 <option value="">-- Pilih Kecamatan --</option>
                             </select>
                         </div>
@@ -91,11 +96,9 @@
                     <div class="space-y-2">
                         <label class="text-lg md:text-xl font-medium text-white">Kelurahan</label>
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                            <!-- Tambahkan name="kelurahan_pengambilan" -->
-                            <select name="kelurahan_pengambilan" class="w-full text-black outline-none bg-transparent">
-                                <option value="Bausasran">Bausasran</option>
-                                <option value="Tegalpanggung">Tegalpanggung</option>
-                                <option value="Suryatmajan">Suryatmajan</option>
+                            <select id="kelurahan2" name="kelurahan_pengambilan" disabled
+                                class="w-full text-black outline-none bg-transparent cursor-not-allowed">
+                                <option value="">-- Pilih Kelurahan --</option>
                             </select>
                         </div>
                     </div>
@@ -164,116 +167,106 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Data ongkir dari database dipassing ke Javascript
+            // Parsing data dari Laravel ke JavaScript
             const dataOngkir = @json($ongkirs);
 
-            const selectKabupaten = document.getElementById('kabupaten');
-            const selectKabupaten2 = document.getElementById('kabupaten2');
-            const selectKecamatan = document.getElementById('kecamatan');
-            const selectKecamatan2 = document.getElementById('kecamatan2');
-            const inputBerat = document.getElementById('berat');
-            const btnHitung = document.getElementById('btn-hitung');
-            const boxHasil = document.getElementById('hasil-box');
-            const elTotalHarga = document.getElementById('total-harga');
-            const elDetailHarga = document.getElementById('detail-harga');
+            // --- ELEMEN UNTUK TUJUAN (Kabupaten -> Kecamatan) ---
+            const selectKabTujuan = document.getElementById('kabupaten');
+            const selectKecTujuan = document.getElementById('kecamatan');
 
+            // --- ELEMEN UNTUK PICKUP/ASAL (Kabupaten -> Kecamatan -> Kelurahan) ---
+            const selectKabPickup = document.getElementById('kabupaten2');
+            const selectKecPickup = document.getElementById('kecamatan2');
+            const selectKelPickup = document.getElementById(
+                'kelurahan2'); // Pastikan ID ini sudah ditambahkan di HTML
 
-            // Logika: Saat Kabupaten dipilih, filter Kecamatan yang sesuai
-            selectKabupaten2.addEventListener('change', function() {
-                const selectedKab = this.value;
+            // ==========================================
+            // 1. LOGIKA DROPDOWN KOTA TUJUAN
+            // ==========================================
+            selectKabTujuan.addEventListener('change', function() {
+                const kab = this.value;
+                selectKecTujuan.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+                selectKecTujuan.disabled = true;
 
-                // Reset dropdown kecamatan
-                selectKecamatan2.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+                if (kab) {
+                    selectKecTujuan.disabled = false;
 
-                if (selectedKab) {
-                    // Aktifkan dropdown kecamatan
-                    selectKecamatan2.disabled = false;
-                    selectKecamatan2.classList.remove('bg-gray-100', 'cursor-not-allowed');
+                    // Filter data berdasarkan kabupaten
+                    const filteredData = dataOngkir.filter(item => item.kabupaten === kab);
 
-                    // Filter data berdasarkan kabupaten yang dipilih
-                    const filteredData = dataOngkir.filter(item => item.kabupaten === selectedKab);
+                    // Hapus duplikat nama kecamatan menggunakan Set()
+                    const uniqueKecamatan = [...new Set(filteredData.map(item => item.kecamatan))];
 
-                    // Isi opsi kecamatan
-                    filteredData.forEach(item => {
+                    uniqueKecamatan.forEach(kec => {
                         const option = document.createElement('option');
-                        option.value = item.kecamatan;
-                        option.dataset.harga = item.harga; // Simpan harga di atribut data
-                        option.textContent = item.kecamatan;
-                        selectKecamatan2.appendChild(option);
+                        option.value = kec;
+                        option.textContent = kec;
+                        selectKecTujuan.appendChild(option);
                     });
-                } else {
-                    // Nonaktifkan kembali jika tidak ada kabupaten dipilih
-                    selectKecamatan2.disabled = true;
-                    selectKecamatan2.classList.add('bg-gray-100', 'cursor-not-allowed');
                 }
-
-                boxHasil.classList.add('hidden'); // Sembunyikan hasil lama
             });
 
-            // Logika: Saat Kabupaten dipilih, filter Kecamatan yang sesuai
-            selectKabupaten.addEventListener('change', function() {
-                const selectedKab = this.value;
+            // ==========================================
+            // 2. LOGIKA DROPDOWN KOTA PENGAMBILAN (PICKUP)
+            // ==========================================
 
-                // Reset dropdown kecamatan
-                selectKecamatan.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+            // A. Saat Kabupaten Pengambilan Berubah
+            selectKabPickup.addEventListener('change', function() {
+                const kab = this.value;
 
-                if (selectedKab) {
-                    // Aktifkan dropdown kecamatan
-                    selectKecamatan.disabled = false;
-                    selectKecamatan.classList.remove('bg-gray-100', 'cursor-not-allowed');
+                // Reset Kecamatan & Kelurahan
+                selectKecPickup.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+                selectKelPickup.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
 
-                    // Filter data berdasarkan kabupaten yang dipilih
-                    const filteredData = dataOngkir.filter(item => item.kabupaten === selectedKab);
+                selectKecPickup.disabled = true;
+                selectKelPickup.disabled = true;
+                selectKelPickup.classList.add('text-gray-500', 'cursor-not-allowed');
 
-                    // Isi opsi kecamatan
-                    filteredData.forEach(item => {
+                if (kab) {
+                    selectKecPickup.disabled = false;
+
+                    // Filter dan hilangkan duplikat kecamatan
+                    const filteredData = dataOngkir.filter(item => item.kabupaten === kab);
+                    const uniqueKecamatan = [...new Set(filteredData.map(item => item.kecamatan))];
+
+                    uniqueKecamatan.forEach(kec => {
                         const option = document.createElement('option');
-                        option.value = item.kecamatan;
-                        option.dataset.harga = item.harga; // Simpan harga di atribut data
-                        option.textContent = item.kecamatan;
-                        selectKecamatan.appendChild(option);
+                        option.value = kec;
+                        option.textContent = kec;
+                        selectKecPickup.appendChild(option);
                     });
-                } else {
-                    // Nonaktifkan kembali jika tidak ada kabupaten dipilih
-                    selectKecamatan.disabled = true;
-                    selectKecamatan.classList.add('bg-gray-100', 'cursor-not-allowed');
                 }
-
-                boxHasil.classList.add('hidden'); // Sembunyikan hasil lama
             });
 
-            // Logika: Hitung ongkir
-            btnHitung.addEventListener('click', function() {
-                if (!selectKabupaten.value || !selectKecamatan.value) {
-                    alert('Harap pilih Kabupaten dan Kecamatan tujuan!');
-                    return;
+            // B. Saat Kecamatan Pengambilan Berubah
+            selectKecPickup.addEventListener('change', function() {
+                const kab = selectKabPickup.value;
+                const kec = this.value;
+
+                // Reset Kelurahan
+                selectKelPickup.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
+                selectKelPickup.disabled = true;
+                selectKelPickup.classList.add('text-gray-500', 'cursor-not-allowed');
+
+                if (kec) {
+                    selectKelPickup.disabled = false;
+                    selectKelPickup.classList.remove('text-gray-500', 'cursor-not-allowed');
+
+                    // Filter data kelurahan yang sesuai dengan Kabupaten DAN Kecamatan yang dipilih
+                    const filteredData = dataOngkir.filter(item => item.kabupaten === kab && item
+                        .kecamatan === kec);
+
+                    // Hilangkan duplikat kelurahan (jika ada)
+                    const uniqueKelurahan = [...new Set(filteredData.map(item => item.kelurahan))];
+
+                    uniqueKelurahan.forEach(kel => {
+                        const option = document.createElement('option');
+                        option.value = kel; // Pastikan nama kolom di DB kamu adalah 'kelurahan'
+                        option.textContent = kel;
+                        selectKelPickup.appendChild(option);
+                    });
                 }
-
-                if (!inputBerat.value || inputBerat.value < 1) {
-                    alert('Berat paket minimal 1 Kg!');
-                    return;
-                }
-
-                // Ambil harga dari opsi kecamatan yang dipilih
-                const selectedOption = selectKecamatan.options[selectKecamatan.selectedIndex];
-                const hargaPerKg = parseInt(selectedOption.dataset.harga);
-                const berat = parseFloat(inputBerat.value);
-
-                const totalTarif = hargaPerKg * berat;
-
-                // Format angka ke format Rupiah
-                const formatRupiah = (angka) => new Intl.NumberFormat('id-ID', {
-                    style: 'currency',
-                    currency: 'IDR',
-                    minimumFractionDigits: 0
-                }).format(angka);
-
-                elTotalHarga.textContent = formatRupiah(totalTarif);
-                elDetailHarga.innerHTML = `Tarif dasar: <strong>${formatRupiah(hargaPerKg)} / Kg</strong> <br> Estimasi berdasarkan berat: <strong>${berat} Kg</strong>`;
-
-                boxHasil.classList.remove('hidden'); // Munculkan box hasil
             });
-
 
         });
     </script>

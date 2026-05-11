@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class PickupController extends Controller
 {
-    // Menampilkan halaman form pickup
     public function index()
     {
         $kabupatens = Ongkir::select('kabupaten')->distinct()->orderBy('kabupaten')->get();
@@ -17,10 +16,8 @@ class PickupController extends Controller
         return view('pickup', compact('kabupatens', 'ongkirs'));
     }
 
-    // Memproses data form dan redirect ke WA
     public function store(Request $request)
     {
-        // 1. Validasi Data
         $validated = $request->validate([
             'kota_tujuan' => 'required|string',
             'kecamatan_tujuan' => 'required|string',
@@ -37,11 +34,8 @@ class PickupController extends Controller
             'tinggi' => 'nullable|integer',
         ]);
 
-        // 2. Simpan ke Database (status otomatis 'Menunggu' berkat default di migration)
         $pickup = Pickup::create($validated);
 
-        // 3. Format Pesan WhatsApp
-        // Ganti nomor ini dengan nomor WA Admin J&T Cargo milikmu (Gunakan awalan 62)
         $adminWhatsApp = "62882005090497";
 
         $textWa = "Halo Admin J&T Cargo, saya ingin request *Pickup Paket*. Berikut detailnya:\n\n";
@@ -66,10 +60,8 @@ class PickupController extends Controller
 
         $textWa .= "\nMohon segera diproses ya min, terima kasih! 🙏 (ID Request: #{$pickup->id})";
 
-        // 4. Encode text agar aman untuk URL
         $encodedText = urlencode($textWa);
 
-        // 5. Buat Link WA dan Redirect User
         $waLink = "https://wa.me/{$adminWhatsApp}?text={$encodedText}";
 
         return redirect()->away($waLink);
