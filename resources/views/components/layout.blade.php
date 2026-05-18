@@ -86,11 +86,12 @@
                 </ul>
             </nav>
 
-            <button
+            <a href="https://wa.me/6282137372800?text=Halo%20J%26T%20Cargo%20Yogyakarta%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+                target="_blank"
                 class="hidden lg:flex bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full items-center gap-2 shadow-lg">
                 <i class="fa-brands fa-whatsapp text-2xl"></i>
                 Hubungi Kami
-            </button>
+            </a>
 
             <button id="btn-mobile-menu" class="block lg:hidden text-primary text-2xl focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
@@ -124,11 +125,12 @@
                     Pickup
                 </a>
 
-                <button
+                <a href="https://wa.me/6282137372800?text=Halo%20J%26T%20Cargo%20Yogyakarta%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+                    target="_blank"
                     class="mt-2 w-full bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex justify-center items-center gap-2 shadow-lg">
                     <i class="fa-brands fa-whatsapp text-2xl"></i>
                     Hubungi Kami
-                </button>
+                </a>
             </nav>
         </div>
     </header>

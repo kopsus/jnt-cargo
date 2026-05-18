@@ -63,7 +63,7 @@
     {{-- end hero --}}
 
     {{-- cek ongkos --}}
-    <section id="cek-ongkir" class="py-12 md:py-20 px-4 md:px-6 bg-primary">
+    {{-- <section id="cek-ongkir" class="py-12 md:py-20 px-4 md:px-6 bg-primary">
         <div class="w-full md:w-10/12 max-w-7xl mx-auto">
 
             <div class="text-center text-white space-y-2 md:space-y-4">
@@ -150,7 +150,7 @@
                 </button>
             </form>
         </div>
-    </section>
+    </section> --}}
     {{-- end cek ongkos --}}
 
     {{-- specialist --}}
