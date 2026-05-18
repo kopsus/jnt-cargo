@@ -19,39 +19,13 @@
 
             <form action="{{ route('pickup.store') }}" method="POST" class="space-y-6 flex flex-col justify-center">
                 @csrf
-                <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-6 md:gap-8">
-                    <div class="space-y-2">
-                        <label class="text-lg md:text-xl font-medium text-white">Kota Tujuan</label>
-                        <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                            <!-- Tambahkan name="kota_tujuan" -->
-                            <select id="kabupaten" name="kota_tujuan"
-                                class="w-full text-black outline-none bg-transparent">
-                                <option value="">-- Pilih Kabupaten / Kota --</option>
-                                @foreach ($kabupatens as $kab)
-                                    <option value="{{ $kab->kabupaten }}">{{ $kab->kabupaten }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <p class="text-xs md:text-sm text-gray-200">Untuk kalkulasi biaya yang akurat</p>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-lg md:text-xl font-medium text-white">Kecamatan</label>
-                        <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                            <!-- Tambahkan name="kecamatan_tujuan" -->
-                            <select id="kecamatan" name="kecamatan_tujuan" disabled
-                                class="w-full text-black outline-none bg-transparent">
-                                <option value="">-- Pilih Kecamatan --</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="space-y-2 col-span-1 md:col-span-2">
-                    <label class="text-lg md:text-xl font-medium text-white">Alamat Detail Penerima</label>
-                    <!-- Tambahkan name="alamat_penerima" -->
-                    <textarea name="alamat_penerima" cols="30" rows="4" placeholder="Kecamatan + Detail alamat lengkap"
+                    <label class="text-lg md:text-xl font-medium text-white">Alamat Lengkap Tujuan (Penerima)</label>
+                    <textarea name="alamat_penerima" cols="30" rows="4"
+                        placeholder="Masukkan Kota, Kecamatan, dan Detail alamat lengkap penerima..." required
                         class="bg-white text-black rounded-xl text-lg md:text-xl w-full p-3 outline-none mt-1 md:mt-2"></textarea>
-                    <p class="text-xs md:text-sm text-gray-200">Penting untuk estimasi pengiriman yang tepat</p>
+                    <p class="text-xs md:text-sm text-gray-200">Pastikan alamat ditulis lengkap beserta Kota/Kabupaten
+                        untuk kemudahan pengiriman.</p>
                 </div>
 
                 <hr class="border-white/30 w-10/12 mx-auto my-8" />
@@ -110,10 +84,10 @@
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
                             <!-- Tambahkan name="jenis_paket" & Sesuaikan isinya -->
                             <select name="jenis_paket" class="w-full text-black outline-none bg-transparent">
-                                <option value="Dokumen">Dokumen</option>
-                                <option value="Pakaian">Pakaian</option>
-                                <option value="Elektronik">Elektronik</option>
+                                <option value="Motor">Motor</option>
+                                <option value="Paket Cargo">Paket Cargo</option>
                                 <option value="Barang Umum">Barang Umum</option>
+                                <option value="Dokumen">Dokumen</option>
                             </select>
                         </div>
                     </div>
@@ -167,54 +141,17 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Parsing data dari Laravel ke JavaScript
             const dataOngkir = @json($ongkirs);
 
-            // --- ELEMEN UNTUK TUJUAN (Kabupaten -> Kecamatan) ---
-            const selectKabTujuan = document.getElementById('kabupaten');
-            const selectKecTujuan = document.getElementById('kecamatan');
-
-            // --- ELEMEN UNTUK PICKUP/ASAL (Kabupaten -> Kecamatan -> Kelurahan) ---
+            // HANYA ELEMEN UNTUK PICKUP/ASAL SAJA
             const selectKabPickup = document.getElementById('kabupaten2');
             const selectKecPickup = document.getElementById('kecamatan2');
-            const selectKelPickup = document.getElementById(
-                'kelurahan2'); // Pastikan ID ini sudah ditambahkan di HTML
+            const selectKelPickup = document.getElementById('kelurahan2');
 
-            // ==========================================
-            // 1. LOGIKA DROPDOWN KOTA TUJUAN
-            // ==========================================
-            selectKabTujuan.addEventListener('change', function() {
-                const kab = this.value;
-                selectKecTujuan.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
-                selectKecTujuan.disabled = true;
-
-                if (kab) {
-                    selectKecTujuan.disabled = false;
-
-                    // Filter data berdasarkan kabupaten
-                    const filteredData = dataOngkir.filter(item => item.kabupaten === kab);
-
-                    // Hapus duplikat nama kecamatan menggunakan Set()
-                    const uniqueKecamatan = [...new Set(filteredData.map(item => item.kecamatan))];
-
-                    uniqueKecamatan.forEach(kec => {
-                        const option = document.createElement('option');
-                        option.value = kec;
-                        option.textContent = kec;
-                        selectKecTujuan.appendChild(option);
-                    });
-                }
-            });
-
-            // ==========================================
-            // 2. LOGIKA DROPDOWN KOTA PENGAMBILAN (PICKUP)
-            // ==========================================
-
-            // A. Saat Kabupaten Pengambilan Berubah
+            // LOGIKA DROPDOWN KOTA PENGAMBILAN (PICKUP)
             selectKabPickup.addEventListener('change', function() {
                 const kab = this.value;
 
-                // Reset Kecamatan & Kelurahan
                 selectKecPickup.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
                 selectKelPickup.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
 
@@ -225,7 +162,6 @@
                 if (kab) {
                     selectKecPickup.disabled = false;
 
-                    // Filter dan hilangkan duplikat kecamatan
                     const filteredData = dataOngkir.filter(item => item.kabupaten === kab);
                     const uniqueKecamatan = [...new Set(filteredData.map(item => item.kecamatan))];
 
@@ -238,12 +174,10 @@
                 }
             });
 
-            // B. Saat Kecamatan Pengambilan Berubah
             selectKecPickup.addEventListener('change', function() {
                 const kab = selectKabPickup.value;
                 const kec = this.value;
 
-                // Reset Kelurahan
                 selectKelPickup.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
                 selectKelPickup.disabled = true;
                 selectKelPickup.classList.add('text-gray-500', 'cursor-not-allowed');
@@ -252,22 +186,18 @@
                     selectKelPickup.disabled = false;
                     selectKelPickup.classList.remove('text-gray-500', 'cursor-not-allowed');
 
-                    // Filter data kelurahan yang sesuai dengan Kabupaten DAN Kecamatan yang dipilih
                     const filteredData = dataOngkir.filter(item => item.kabupaten === kab && item
                         .kecamatan === kec);
-
-                    // Hilangkan duplikat kelurahan (jika ada)
                     const uniqueKelurahan = [...new Set(filteredData.map(item => item.kelurahan))];
 
                     uniqueKelurahan.forEach(kel => {
                         const option = document.createElement('option');
-                        option.value = kel; // Pastikan nama kolom di DB kamu adalah 'kelurahan'
+                        option.value = kel;
                         option.textContent = kel;
                         selectKelPickup.appendChild(option);
                     });
                 }
             });
-
         });
     </script>
 </x-layout>

@@ -25,9 +25,8 @@ class PickupController extends Controller
     {
         $pickup = Pickup::findOrFail($id);
 
+        // Validasi disesuaikan (tanpa kota_tujuan & kecamatan_tujuan)
         $validated = $request->validate([
-            'kota_tujuan' => 'required|string',
-            'kecamatan_tujuan' => 'required|string',
             'alamat_penerima' => 'required|string',
             'kota_pengambilan' => 'required|string',
             'wa_pengirim' => 'required|string',

@@ -19,8 +19,6 @@ class PickupController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'kota_tujuan' => 'required|string',
-            'kecamatan_tujuan' => 'required|string',
             'alamat_penerima' => 'required|string',
             'kota_pengambilan' => 'required|string',
             'wa_pengirim' => 'required|string',
@@ -32,24 +30,26 @@ class PickupController extends Controller
             'panjang' => 'nullable|integer',
             'lebar' => 'nullable|integer',
             'tinggi' => 'nullable|integer',
-        ]);
-
-        $pickup = Pickup::create($validated);
-
-        $adminWhatsApp = "62882005090497";
-
-        $textWa = "Halo Admin J&T Cargo, saya ingin request *Pickup Paket*. Berikut detailnya:\n\n";
-        $textWa .= "*[INFORMASI PENGIRIM]*\n";
+            ]);
+            
+            $validated['kota_tujuan'] = '-';
+            $validated['kecamatan_tujuan'] = '-';
+            
+            $pickup = Pickup::create($validated);
+            
+            $adminWhatsApp = "6282137372800";
+            
+            $textWa = "Halo Admin J&T Cargo, saya ingin request *Pickup Paket*. Berikut detailnya:\n\n";
+            
+            $textWa .= "*[INFORMASI PENGIRIM (PICKUP)]*\n";
         $textWa .= "- No. WA: {$pickup->wa_pengirim}\n";
-        $textWa .= "- Kota Pickup: {$pickup->kota_pengambilan}\n";
+        $textWa .= "- Kota/Kab: {$pickup->kota_pengambilan}\n";
         $textWa .= "- Kec/Kel: {$pickup->kecamatan_pengambilan} / {$pickup->kelurahan_pengambilan}\n";
         $textWa .= "- Alamat Lengkap: {$pickup->alamat_pickup}\n\n";
-
-        $textWa .= "*[INFORMASI PENERIMA]*\n";
-        $textWa .= "- Kota Tujuan: {$pickup->kota_tujuan}\n";
-        $textWa .= "- Kecamatan: {$pickup->kecamatan_tujuan}\n";
-        $textWa .= "- Alamat Lengkap: {$pickup->alamat_penerima}\n\n";
-
+        
+        $textWa .= "*[INFORMASI PENERIMA (TUJUAN)]*\n";
+        $textWa .= "- Alamat Lengkap: {$pickup->alamat_penerima}\n\n"; 
+        
         $textWa .= "*[DETAIL PAKET]*\n";
         $textWa .= "- Jenis: {$pickup->jenis_paket}\n";
         $textWa .= "- Berat: {$pickup->berat} Kg\n";
@@ -60,8 +60,8 @@ class PickupController extends Controller
 
         $textWa .= "\nMohon segera diproses ya min, terima kasih! 🙏 (ID Request: #{$pickup->id})";
 
+        // 4. Encode text dan Redirect
         $encodedText = urlencode($textWa);
-
         $waLink = "https://wa.me/{$adminWhatsApp}?text={$encodedText}";
 
         return redirect()->away($waLink);
