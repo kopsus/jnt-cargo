@@ -25,13 +25,12 @@ class PickupController extends Controller
     {
         $pickup = Pickup::findOrFail($id);
 
-        // Validasi disesuaikan (tanpa kota_tujuan & kecamatan_tujuan)
+        // Validasi bersih tanpa kelurahan_pengambilan
         $validated = $request->validate([
             'alamat_penerima' => 'required|string',
             'kota_pengambilan' => 'required|string',
             'wa_pengirim' => 'required|string',
             'kecamatan_pengambilan' => 'required|string',
-            'kelurahan_pengambilan' => 'required|string',
             'alamat_pickup' => 'required|string',
             'jenis_paket' => 'required|string',
             'berat' => 'required|integer|min:1',
@@ -40,6 +39,11 @@ class PickupController extends Controller
             'tinggi' => 'nullable|integer',
             'status' => 'required|in:Menunggu,Kurir Menuju Lokasi,Selesai / Paket Diambil,Batal',
         ]);
+
+        // Suntikkan nilai default untuk kolom yang sudah tidak dipakai
+        $validated['kota_tujuan'] = '-';
+        $validated['kecamatan_tujuan'] = '-';
+        $validated['kelurahan_pengambilan'] = '-';
 
         $pickup->update($validated);
 

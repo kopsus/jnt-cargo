@@ -6,15 +6,15 @@
 
             <!-- Tambahkan penampil pesan error ini agar kita tahu kalau ada yang salah -->
             @if ($errors->any())
-                <div
-                    class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg w-full max-w-7xl mx-auto">
-                    <p class="font-bold">Oops! Ada yang terlewat:</p>
-                    <ul class="list-disc pl-5 text-sm mt-1">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div
+                class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg w-full max-w-7xl mx-auto">
+                <p class="font-bold">Oops! Ada yang terlewat:</p>
+                <ul class="list-disc pl-5 text-sm mt-1">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
 
             <form action="{{ route('pickup.store') }}" method="POST" class="space-y-6 flex flex-col justify-center">
@@ -30,53 +30,40 @@
 
                 <hr class="border-white/30 w-10/12 mx-auto my-8" />
 
-                <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-6 md:gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-6 md:gap-8">
                     <div class="space-y-2">
                         <label class="text-lg md:text-xl font-medium text-white">Kota Pengambilan</label>
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                            <!-- Tambahkan name="kota_pengambilan" -->
-                            <select id="kabupaten2" name="kota_pengambilan"
-                                class="w-full text-black outline-none bg-transparent">
-                                <option value="">-- Pilih Kabupaten / Kota --</option>
-                                @foreach ($kabupatens as $kab)
-                                    <option value="{{ $kab->kabupaten }}">{{ $kab->kabupaten }}</option>
-                                @endforeach
+                            <select id="kabupaten2" name="kota_pengambilan" required class="w-full text-black outline-none bg-transparent">
+                                <option value="">-- Pilih Kota / Kabupaten --</option>
+                                <option value="JOGJA">JOGJA</option>
+                                <option value="BANTUL">BANTUL</option>
+                                <option value="SLEMAN">SLEMAN</option>
+                                <option value="KULON PROGO">KULON PROGO</option>
+                                <option value="GUNUNG KIDUL">GUNUNG KIDUL</option>
                             </select>
                         </div>
-                        <p class="text-xs md:text-sm text-gray-200">kami melayani pickup dari seluruh area jogja</p>
+                        <p class="text-xs md:text-sm text-gray-200">Kami melayani pickup khusus untuk area DIY Raya</p>
                     </div>
 
                     <div class="space-y-2">
-                        <label class="text-lg md:text-xl font-medium text-white">Nomor WhatsApp</label>
-                        <!-- Tambahkan name="wa_pengirim" -->
-                        <input type="number" name="wa_pengirim" placeholder="08xx xxxx xxxx"
-                            class="bg-white w-full p-3 rounded-xl text-lg md:text-xl text-black mt-1 md:mt-2 outline-none">
-                        <p class="text-xs md:text-sm text-gray-200">Tim kami akan menghubungi via Whatsapp</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-6 md:gap-8">
-                    <div class="space-y-2">
-                        <label class="text-lg md:text-xl font-medium text-white">Kecamatan</label>
+                        <label class="text-lg md:text-xl font-medium text-white">Kecamatan Pengambilan</label>
                         <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                            <!-- Tambahkan name="kecamatan_pengambilan" -->
-                            <select id="kecamatan2" name="kecamatan_pengambilan" disabled
-                                class="w-full text-black outline-none bg-transparent">
+                            <select id="kecamatan2" name="kecamatan_pengambilan" disabled required class="w-full text-black outline-none bg-transparent cursor-not-allowed">
                                 <option value="">-- Pilih Kecamatan --</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="space-y-2">
-                        <label class="text-lg md:text-xl font-medium text-white">Kelurahan</label>
-                        <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                            <select id="kelurahan2" name="kelurahan_pengambilan" disabled
-                                class="w-full text-black outline-none bg-transparent cursor-not-allowed">
-                                <option value="">-- Pilih Kelurahan --</option>
-                            </select>
-                        </div>
+                        <label class="text-lg md:text-xl font-medium text-white">Nomor WhatsApp Pengirim</label>
+                        <input type="number" name="wa_pengirim" placeholder="08xx xxxx xxxx" required
+                            class="bg-white w-full p-3 rounded-xl text-lg md:text-xl text-black mt-1 md:mt-2 outline-none">
+                        <p class="text-xs md:text-sm text-gray-200">Tim kami akan menghubungi via Whatsapp</p>
                     </div>
+
                 </div>
+
 
                 <div class="grid grid-cols-1 md:grid-cols-2 items-start gap-6 md:gap-8">
                     <div class="space-y-2">
@@ -141,60 +128,38 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const dataOngkir = @json($ongkirs);
+            // Objek data statis DIY yang kamu berikan
+            const dataDIY = {
+                "BANTUL": ["Bambanglipuro", "Banguntapan", "Bantul", "Dlingo", "Imogiri", "Jetis", "Kasihan", "Kretek", "Pajangan", "Pandak", "Piyungan", "Pleret", "Pundong", "Sanden", "Sedayu", "Sewon", "Srandakan"],
+                "JOGJA": ["Danurejan", "Gedongtengen", "Gondokusuman", "Gondomanan", "Jetis", "Kotagede", "Kraton", "Mantrijeron", "Mergangsan", "Ngampilan", "Pakualaman", "Tegalrejo", "Umbulharjo", "Wirobrajan"],
+                "KULON PROGO": ["Galur", "Girimulyo", "Kalibawang", "Kokap", "Lendah", "Nanggulan", "Panjatan", "Pengasih", "Samigaluh", "Sentolo", "Temon", "Wates"],
+                "SLEMAN": ["Berbah", "Cangkringan", "Depok", "Gamping", "Godean", "Kalasan", "Minggir", "Mlati", "Moyudan", "Ngaglik", "Ngemplak", "Pakem", "Prambanan", "Seyegan", "Sleman", "Tempel", "Turi"],
+                "GUNUNG KIDUL": ["Gedangsari", "Girisubo", "Karangmojo", "Ngawen", "Nglipar", "Paliyan", "Panggang", "Patuk", "Playen", "Ponjong", "Purwosari", "Rongkop", "Saptosari", "Semanu", "Semin", "Tanjungsari", "Tepus", "Wonosari"]
+            };
 
-            // HANYA ELEMEN UNTUK PICKUP/ASAL SAJA
             const selectKabPickup = document.getElementById('kabupaten2');
             const selectKecPickup = document.getElementById('kecamatan2');
-            const selectKelPickup = document.getElementById('kelurahan2');
 
-            // LOGIKA DROPDOWN KOTA PENGAMBILAN (PICKUP)
+            // Logika: Saat Kota dipilih, munculkan Kecamatan yang sesuai secara instan
             selectKabPickup.addEventListener('change', function() {
-                const kab = this.value;
+                const kotaTerpilih = this.value;
 
+                // Reset Dropdown Kecamatan
                 selectKecPickup.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
-                selectKelPickup.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
-
                 selectKecPickup.disabled = true;
-                selectKelPickup.disabled = true;
-                selectKelPickup.classList.add('text-gray-500', 'cursor-not-allowed');
+                selectKecPickup.classList.add('cursor-not-allowed');
 
-                if (kab) {
+                if (kotaTerpilih && dataDIY[kotaTerpilih]) {
+                    // Aktifkan Dropdown Kecamatan
                     selectKecPickup.disabled = false;
+                    selectKecPickup.classList.remove('cursor-not-allowed');
 
-                    const filteredData = dataOngkir.filter(item => item.kabupaten === kab);
-                    const uniqueKecamatan = [...new Set(filteredData.map(item => item.kecamatan))];
-
-                    uniqueKecamatan.forEach(kec => {
+                    // Isi data kecamatan dari objek dataDIY
+                    dataDIY[kotaTerpilih].forEach(kecamatan => {
                         const option = document.createElement('option');
-                        option.value = kec;
-                        option.textContent = kec;
+                        option.value = kecamatan;
+                        option.textContent = kecamatan;
                         selectKecPickup.appendChild(option);
-                    });
-                }
-            });
-
-            selectKecPickup.addEventListener('change', function() {
-                const kab = selectKabPickup.value;
-                const kec = this.value;
-
-                selectKelPickup.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
-                selectKelPickup.disabled = true;
-                selectKelPickup.classList.add('text-gray-500', 'cursor-not-allowed');
-
-                if (kec) {
-                    selectKelPickup.disabled = false;
-                    selectKelPickup.classList.remove('text-gray-500', 'cursor-not-allowed');
-
-                    const filteredData = dataOngkir.filter(item => item.kabupaten === kab && item
-                        .kecamatan === kec);
-                    const uniqueKelurahan = [...new Set(filteredData.map(item => item.kelurahan))];
-
-                    uniqueKelurahan.forEach(kel => {
-                        const option = document.createElement('option');
-                        option.value = kel;
-                        option.textContent = kel;
-                        selectKelPickup.appendChild(option);
                     });
                 }
             });

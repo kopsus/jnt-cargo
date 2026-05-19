@@ -21,13 +21,13 @@
                         <select name="status"
                             class="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition text-lg font-bold">
                             @php
-                                $statuses = ['Menunggu', 'Kurir Menuju Lokasi', 'Selesai / Paket Diambil', 'Batal'];
+                            $statuses = ['Menunggu', 'Kurir Menuju Lokasi', 'Selesai / Paket Diambil', 'Batal'];
                             @endphp
                             @foreach ($statuses as $status)
-                                <option value="{{ $status }}"
-                                    {{ old('status', $pickup->status) == $status ? 'selected' : '' }}>
-                                    {{ $status }}
-                                </option>
+                            <option value="{{ $status }}"
+                                {{ old('status', $pickup->status) == $status ? 'selected' : '' }}>
+                                {{ $status }}
+                            </option>
                             @endforeach
                         </select>
                     </div>
@@ -38,20 +38,20 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
                         <label class="font-medium text-gray-700">Kota Pengambilan (Asal)</label>
-                        <input type="text" name="kota_pengambilan"
-                            value="{{ old('kota_pengambilan', $pickup->kota_pengambilan) }}" required
-                            class="w-full border border-gray-300 px-4 py-2.5 rounded-lg outline-none transition">
+                        <select name="kota_pengambilan" required class="w-full border border-gray-300 px-4 py-2.5 rounded-lg outline-none transition font-bold text-gray-700">
+                            @php
+                            $kotaDIY = ['JOGJA', 'BANTUL', 'SLEMAN', 'KULON PROGO', 'GUNUNG KIDUL'];
+                            @endphp
+                            @foreach($kotaDIY as $kota)
+                            <option value="{{ $kota }}" {{ old('kota_pengambilan', $pickup->kota_pengambilan) == $kota ? 'selected' : '' }}>
+                                {{ $kota }}
+                            </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="space-y-2">
-                        <label class="font-medium text-gray-700">Kecamatan / Kelurahan Asal</label>
-                        <div class="flex gap-2">
-                            <input type="text" name="kecamatan_pengambilan"
-                                value="{{ old('kecamatan_pengambilan', $pickup->kecamatan_pengambilan) }}"
-                                class="w-1/2 border border-gray-300 px-4 py-2.5 rounded-lg outline-none">
-                            <input type="text" name="kelurahan_pengambilan"
-                                value="{{ old('kelurahan_pengambilan', $pickup->kelurahan_pengambilan) }}"
-                                class="w-1/2 border border-gray-300 px-4 py-2.5 rounded-lg outline-none">
-                        </div>
+                        <label class="font-medium text-gray-700">Kecamatan Asal</label>
+                        <input type="text" name="kecamatan_pengambilan" value="{{ old('kecamatan_pengambilan', $pickup->kecamatan_pengambilan) }}" required class="w-full border border-gray-300 px-4 py-2.5 rounded-lg outline-none">
                     </div>
                 </div>
 
