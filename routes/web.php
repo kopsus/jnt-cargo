@@ -41,13 +41,11 @@ Route::get('/cek-resi', function (Request $request) {
 
 // ONGKIR
 Route::get('/cek-ongkir', function () {
-    // Ambil data unik Kabupaten untuk Dropdown pertama
-    $kabupatens = Ongkir::select('kabupaten')->distinct()->orderBy('kabupaten')->get();
+    $provinsis = \App\Models\Ongkir::select('provinsi')->distinct()->orderBy('provinsi')->get();
+    
+    $ongkirs = \App\Models\Ongkir::all(); 
 
-    // Ambil seluruh data ongkir untuk logika JavaScript
-    $ongkirs = Ongkir::all();
-
-    return view('cek-ongkir', compact('kabupatens', 'ongkirs'));
+    return view('cek-ongkir', compact('provinsis', 'ongkirs'));
 });
 
 // PICKUP

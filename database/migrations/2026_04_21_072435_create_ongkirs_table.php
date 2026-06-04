@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('ongkirs', function (Blueprint $table) {
             $table->id();
+            $table->string('provinsi');
             $table->string('kabupaten');
             $table->string('kecamatan');
-            $table->integer('harga'); // Harga per Kg
+            $table->integer('harga'); 
             $table->timestamps();
         });
     }

@@ -9,5 +9,5 @@ class Ongkir extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['kabupaten', 'kecamatan', 'kelurahan', 'harga'];
+    protected $fillable = ['provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'harga'];
 }

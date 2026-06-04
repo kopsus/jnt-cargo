@@ -7,26 +7,40 @@
             <p class="text-gray-500">Estimasi biaya pengiriman paket Anda (Harga per Kilogram).</p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 max-w-2xl mx-auto relative overflow-hidden">
+        <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10 max-w-2xl mx-auto relative overflow-hidden">
 
             <form id="ongkir-form" class="space-y-6 relative z-10">
 
                 <div class="space-y-2">
-                    <label class="font-bold text-gray-700 block">Kota / Kabupaten Tujuan</label>
+                    <label class="font-bold text-gray-700 block">Provinsi Tujuan</label>
                     <div class="border border-slate-200 px-4 py-3 rounded-xl">
-                        <select id="kabupaten" class="w-full">
-                            <option value="">-- Pilih Kabupaten / Kota --</option>
-                            @foreach($kabupatens as $kab)
-                            <option value="{{ $kab->kabupaten }}">{{ $kab->kabupaten }}</option>
+                        <select id="provinsi" class="w-full bg-transparent outline-none">
+                            <option value="">-- Pilih Provinsi --</option>
+                            @foreach ($provinsis as $prov)
+                                <option value="{{ $prov->provinsi }}">{{ $prov->provinsi }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
 
                 <div class="space-y-2">
+                    <label class="font-bold text-gray-700 block">Kota / Kabupaten Tujuan</label>
+                    <div id="wrapper-kabupaten"
+                        class="border border-slate-200 bg-gray-100 px-4 py-3 rounded-xl transition">
+                        <select id="kabupaten" disabled
+                            class="w-full bg-transparent outline-none cursor-not-allowed text-gray-400">
+                            <option value="">-- Pilih Kabupaten / Kota --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
                     <label class="font-bold text-gray-700 block">Kecamatan Tujuan</label>
-                    <div class="border border-slate-200 bg-gray-100 px-4 py-3 rounded-xl">
-                        <select id="kecamatan" disabled class="w-full">
+                    <div id="wrapper-kecamatan"
+                        class="border border-slate-200 bg-gray-100 px-4 py-3 rounded-xl transition">
+                        <select id="kecamatan" disabled
+                            class="w-full bg-transparent outline-none cursor-not-allowed text-gray-400">
                             <option value="">-- Pilih Kecamatan --</option>
                         </select>
                     </div>
@@ -34,10 +48,13 @@
 
                 <div class="space-y-2">
                     <label class="font-bold text-gray-700 block">Berat Paket (Kg)</label>
-                    <input type="number" id="berat" min="1" value="1" placeholder="Masukkan berat paket..." class="w-full border border-gray-600 px-4 py-3 rounded-xl focus:border-primary focus:ring-0 outline-none transition">
+                    <input type="number" id="berat" min="1" value="1"
+                        placeholder="Masukkan berat paket..."
+                        class="w-full border border-slate-200 px-4 py-3 rounded-xl focus:border-primary focus:ring-0 outline-none transition">
                 </div>
 
-                <button type="button" id="btn-hitung" class="w-full bg-primary hover:bg-green-700 text-white font-bold py-4 rounded-xl transition shadow-lg flex justify-center items-center gap-2 text-lg">
+                <button type="button" id="btn-hitung"
+                    class="w-full bg-primary hover:bg-green-700 text-white font-bold py-4 rounded-xl transition shadow-lg flex justify-center items-center gap-2 text-lg">
                     <i class="fa-solid fa-calculator"></i> Hitung Estimasi Tarif
                 </button>
             </form>
@@ -57,79 +74,145 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Data ongkir dari database dipassing ke Javascript
+            // Master data dari database
             const dataOngkir = @json($ongkirs);
 
+            // Selektor Elemen Dropdown & Wrapper
+            const selectProvinsi = document.getElementById('provinsi');
             const selectKabupaten = document.getElementById('kabupaten');
             const selectKecamatan = document.getElementById('kecamatan');
+            const wrapperKabupaten = document.getElementById('wrapper-kabupaten');
+            const wrapperKecamatan = document.getElementById('wrapper-kecamatan');
+
+            // Selektor Elemen Hitung
             const inputBerat = document.getElementById('berat');
             const btnHitung = document.getElementById('btn-hitung');
             const boxHasil = document.getElementById('hasil-box');
             const elTotalHarga = document.getElementById('total-harga');
             const elDetailHarga = document.getElementById('detail-harga');
 
-            // Logika: Saat Kabupaten dipilih, filter Kecamatan yang sesuai
+            // =======================================================
+            // LOGIKA 1: SAAT PROVINSI DIPILIH -> FILTER KABUPATEN
+            // =======================================================
+            selectProvinsi.addEventListener('change', function() {
+                const selectedProv = this.value;
+
+                // Reset anak-anaknya (Kabupaten & Kecamatan)
+                selectKabupaten.innerHTML = '<option value="">-- Pilih Kabupaten / Kota --</option>';
+                selectKecamatan.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+
+                // Kunci kembali semuanya
+                selectKabupaten.disabled = true;
+                selectKabupaten.classList.add('cursor-not-allowed', 'text-gray-400');
+                wrapperKabupaten.classList.add('bg-gray-100');
+
+                selectKecamatan.disabled = true;
+                selectKecamatan.classList.add('cursor-not-allowed', 'text-gray-400');
+                wrapperKecamatan.classList.add('bg-gray-100');
+
+                if (selectedProv) {
+                    // Aktifkan Dropdown Kabupaten
+                    selectKabupaten.disabled = false;
+                    selectKabupaten.classList.remove('cursor-not-allowed', 'text-gray-400');
+                    wrapperKabupaten.classList.remove('bg-gray-100');
+
+                    // Filter data berdasarkan Provinsi yang dipilih
+                    const filteredData = dataOngkir.filter(item => item.provinsi === selectedProv);
+
+                    // Hilangkan duplikat nama Kabupaten menggunakan Set()
+                    const uniqueKabupaten = [...new Set(filteredData.map(item => item.kabupaten))];
+
+                    // Masukkan ke dropdown Kabupaten
+                    uniqueKabupaten.forEach(kab => {
+                        const option = document.createElement('option');
+                        option.value = kab;
+                        option.textContent = kab;
+                        selectKabupaten.appendChild(option);
+                    });
+                }
+                boxHasil.classList.add('hidden'); // Sembunyikan box hasil lama
+            });
+
+            // =======================================================
+            // LOGIKA 2: SAAT KABUPATEN DIPILIH -> FILTER KECAMATAN
+            // =======================================================
             selectKabupaten.addEventListener('change', function() {
+                const selectedProv = selectProvinsi.value;
                 const selectedKab = this.value;
 
                 // Reset dropdown kecamatan
                 selectKecamatan.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+                selectKecamatan.disabled = true;
+                selectKecamatan.classList.add('cursor-not-allowed', 'text-gray-400');
+                wrapperKecamatan.classList.add('bg-gray-100');
 
                 if (selectedKab) {
-                    // Aktifkan dropdown kecamatan
+                    // Aktifkan Dropdown Kecamatan
                     selectKecamatan.disabled = false;
-                    selectKecamatan.classList.remove('bg-gray-100', 'cursor-not-allowed');
+                    selectKecamatan.classList.remove('cursor-not-allowed', 'text-gray-400');
+                    wrapperKecamatan.classList.remove('bg-gray-100');
 
-                    // Filter data berdasarkan kabupaten yang dipilih
-                    const filteredData = dataOngkir.filter(item => item.kabupaten === selectedKab);
+                    // Filter data berdasarkan Provinsi DAN Kabupaten yang aktif
+                    const filteredData = dataOngkir.filter(item => item.provinsi === selectedProv && item
+                        .kabupaten === selectedKab);
 
-                    // Isi opsi kecamatan
+                    // Hilangkan duplikat nama Kecamatan (tapi simpan satu baris objek utuh agar harganya terbawa)
+                    const uniqueKecamatan = [];
+                    const seen = new Set();
+
                     filteredData.forEach(item => {
+                        if (!seen.has(item.kecamatan)) {
+                            seen.add(item.kecamatan);
+                            uniqueKecamatan.push(item);
+                        }
+                    });
+
+                    // Masukkan ke dropdown Kecamatan
+                    uniqueKecamatan.forEach(item => {
                         const option = document.createElement('option');
                         option.value = item.kecamatan;
-                        option.dataset.harga = item.harga; // Simpan harga di atribut data
+                        option.dataset.harga = item.harga; // Ikat harga dasar di dataset
                         option.textContent = item.kecamatan;
                         selectKecamatan.appendChild(option);
                     });
-                } else {
-                    // Nonaktifkan kembali jika tidak ada kabupaten dipilih
-                    selectKecamatan.disabled = true;
-                    selectKecamatan.classList.add('bg-gray-100', 'cursor-not-allowed');
                 }
-
-                boxHasil.classList.add('hidden'); // Sembunyikan hasil lama
+                boxHasil.classList.add('hidden');
             });
 
-            // Logika: Hitung ongkir
+            // =======================================================
+            // LOGIKA 3: PROSES PERHITUNGAN ONGKIR
+            // =======================================================
             btnHitung.addEventListener('click', function() {
-                if (!selectKabupaten.value || !selectKecamatan.value) {
-                    alert('Harap pilih Kabupaten dan Kecamatan tujuan!');
+                if (!selectProvinsi.value || !selectKabupaten.value || !selectKecamatan.value) {
+                    alert('Harap pilih Provinsi, Kabupaten, dan Kecamatan tujuan dengan lengkap!');
                     return;
                 }
 
                 if (!inputBerat.value || inputBerat.value < 1) {
-                    alert('Berat paket minimal 1 Kg!');
+                    alert('Berat paket minimal adalah 1 Kg!');
                     return;
                 }
 
-                // Ambil harga dari opsi kecamatan yang dipilih
+                // Ambil harga dasar dari kecamatan terpilih
                 const selectedOption = selectKecamatan.options[selectKecamatan.selectedIndex];
                 const hargaPerKg = parseInt(selectedOption.dataset.harga);
                 const berat = parseFloat(inputBerat.value);
 
                 const totalTarif = hargaPerKg * berat;
 
-                // Format angka ke format Rupiah
+                // Format mata uang Rupiah (IDR)
                 const formatRupiah = (angka) => new Intl.NumberFormat('id-ID', {
                     style: 'currency',
                     currency: 'IDR',
                     minimumFractionDigits: 0
                 }).format(angka);
 
+                // Tampilkan hasil kalkulasi ke user
                 elTotalHarga.textContent = formatRupiah(totalTarif);
-                elDetailHarga.innerHTML = `Tarif dasar: <strong>${formatRupiah(hargaPerKg)} / Kg</strong> <br> Estimasi berdasarkan berat: <strong>${berat} Kg</strong>`;
+                elDetailHarga.innerHTML =
+                    `Tarif dasar wilayah: <strong>${formatRupiah(hargaPerKg)} / Kg</strong> <br> Estimasi total berdasarkan berat: <strong>${berat} Kg</strong>`;
 
-                boxHasil.classList.remove('hidden'); // Munculkan box hasil
+                boxHasil.classList.remove('hidden'); // Buka kotak box hasil
             });
         });
     </script>
