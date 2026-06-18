@@ -12,24 +12,23 @@
         <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 relative z-10">
 
             <div class="flex flex-col items-start gap-4 text-primary">
-                <p class="font-bold tracking-wide text-sm md:text-base">Pengiriman Reguler Dari Jogja ke Seluruh
+                <p class="font-bold tracking-wide text-sm md:text-base">Spesialis Pengiriman Motor Dari Jogja ke Seluruh
                     Indonesia</p>
                 <div class="flex flex-col gap-2">
                     <p class="text-3xl md:text-5xl font-extrabold leading-tight">
-                        Spesial Ramadhan <br>
-                        Kirim Motor & Paket Besar <br>
-                        Murah, Aman & Cepat!
+                        Pusat Kirim Motor <br>
+                        Antar Kota & Pulau <br>
+                        Aman, Cepat & Bergaransi!
                     </p>
                     <p class="font-medium text-gray-800 mt-2 max-w-md text-sm md:text-base">
-                        Kirim motor antar kota & antar pulau dengan harga lebih hemat!
-                        Nikmati voucher diskon spesial untuk setiap pengiriman motor melalui layanan J&T Cargo Jogja.
+                        Percayakan pengiriman kendaraan kesayangan Anda kepada ahlinya. Kami melayani pengiriman motor bebek, matic, sport, hingga moge dengan standar <i>packing</i> ekstra aman dan perlindungan asuransi.
                     </p>
                 </div>
 
                 <button
                     class="mt-2 md:mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg text-sm md:text-base">
                     <i class="fa-brands fa-whatsapp text-xl md:text-2xl"></i>
-                    Hubungi Kami
+                    Konsultasi Kirim Motor
                 </button>
             </div>
 
@@ -48,7 +47,7 @@
                         </div>
 
                         <div class="swiper-slide flex justify-center items-center">
-                            <img src="{{ asset('images/motor3.png') }}" alt="Motor J&T 2"
+                            <img src="{{ asset('images/motor3.png') }}" alt="Motor J&T 3"
                                 class="w-full h-full drop-shadow-2xl object-contain">
                         </div>
 
