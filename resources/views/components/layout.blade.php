@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,30 +21,30 @@
 <body>
     {{-- header --}}
     @php
-        // Ambil semua voucher yang aktif dari database
-        $vouchers = \App\Models\Voucher::where('is_active', true)->get();
+    // Ambil semua voucher yang aktif dari database
+    $vouchers = \App\Models\Voucher::where('is_active', true)->get();
     @endphp
 
     @if ($vouchers->count() > 0)
-        <div class="bg-primary py-3 md:py-4" id="voucher-banner">
-            <div
-                class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
-                <p id="voucher-title" class="text-white text-sm md:text-base text-center">
-                    Memuat promo...
+    <div class="bg-primary py-3 md:py-4" id="voucher-banner">
+        <div
+            class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+            <p id="voucher-title" class="text-white text-sm md:text-base text-center">
+                Memuat promo...
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a id="voucher-link" href="#" target="_blank"
+                    class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base transition hover:bg-white">
+                    Klaim Sekarang
+                </a>
+
+                <p id="voucher-timer" class="text-secondary font-bold text-xl md:text-3xl">
+                    00:00:00
                 </p>
-
-                <div class="flex items-center gap-4">
-                    <a id="voucher-link" href="#" target="_blank"
-                        class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base transition hover:bg-white">
-                        Klaim Sekarang
-                    </a>
-
-                    <p id="voucher-timer" class="text-secondary font-bold text-xl md:text-3xl">
-                        00:00:00
-                    </p>
-                </div>
             </div>
         </div>
+    </div>
     @endif
 
     <header class="bg-white py-4 shadow z-50 relative">
