@@ -10,34 +10,24 @@ return new class extends Migration
     {
         Schema::create('pickups', function (Blueprint $table) {
             $table->id();
-
-            // Informasi Penerima
-            $table->string('kota_tujuan');
-            $table->string('kecamatan_tujuan');
-            $table->text('alamat_penerima');
-
-            // Informasi Pengirim (Pickup)
-            $table->string('kota_pengambilan');
-            $table->string('wa_pengirim');
-            $table->string('kecamatan_pengambilan');
-            $table->string('kelurahan_pengambilan');
-            $table->text('alamat_pickup');
-
-            // Informasi Paket
-            $table->string('jenis_paket');
+            
+            // Kolom teks biasa
+            $table->string('nama');
+            $table->text('alamat');
+            $table->string('kecamatan');
+            $table->string('kelurahan');
+            $table->string('nomer_wa');
+            $table->string('jenis');
+            
+            // Kolom angka
             $table->integer('berat');
-            $table->integer('panjang')->nullable();
-            $table->integer('lebar')->nullable();
-            $table->integer('tinggi')->nullable();
-
-            // Status Sistem (Poin 1 yang kita diskusikan)
-            $table->enum('status', [
-                'Menunggu',
-                'Kurir Menuju Lokasi',
-                'Selesai / Paket Diambil',
-                'Batal'
-            ])->default('Menunggu');
-
+            
+            // Kolom yang boleh dikosongkan (nullable)
+            $table->string('koordinat')->nullable();
+            
+            // Kolom dengan nilai default
+            $table->string('status')->default('Menunggu');
+            
             $table->timestamps();
         });
     }
