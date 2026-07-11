@@ -42,8 +42,8 @@ Route::get('/cek-resi', function (Request $request) {
 // ONGKIR
 Route::get('/cek-ongkir', function () {
     $provinsis = \App\Models\Ongkir::select('provinsi')->distinct()->orderBy('provinsi')->get();
-    
-    $ongkirs = \App\Models\Ongkir::all(); 
+
+    $ongkirs = \App\Models\Ongkir::all();
 
     return view('cek-ongkir', compact('provinsis', 'ongkirs'));
 });
@@ -93,4 +93,5 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // Pickups
     Route::resource('pickups', AdminPickupController::class)->names('admin.pickups')->except(['create', 'store', 'show']);
+    Route::get('/admin/pickups/export', [\App\Http\Controllers\Admin\PickupController::class, 'exportCsv'])->name('admin.pickups.export');
 });

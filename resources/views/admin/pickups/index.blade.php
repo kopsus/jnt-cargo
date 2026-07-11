@@ -2,6 +2,12 @@
     <div class="space-y-6">
         <div class="flex items-center justify-between">
             <h1 class="text-3xl font-bold text-gray-800">Monitoring Pickup</h1>
+
+            <!-- Tombol Export CSV Baru -->
+            <a href="{{ route('admin.pickups.export') }}"
+                class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-4 rounded-lg transition shadow-sm flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-file-csv text-lg"></i> Export CSV
+            </a>
         </div>
 
         @if (session('success'))
