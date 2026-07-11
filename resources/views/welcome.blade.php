@@ -238,20 +238,28 @@
                 <p>Sebagai mitra operasional J&T Cargo di area Jogjakarta dan sekitarnya, kami menangani:</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6 mt-12">
-                <div class="relative rounded-xl overflow-hidden h-52 md:h-full">
-                    <img src="/images/service1.jpg" alt="" class="w-full h-full object-cover block" />
+
+                <!-- Layanan 1: Kirim Motor -->
+                <a href="{{ url('/layanan/kirim-motor') }}" class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                    <img src="/images/service1.jpg" alt="Kirim Motor" class="w-full h-full object-cover block" />
+                    <!-- Efek gradient gelap opsional agar teks putih lebih terbaca -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
                     <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">Kirim Motor</p>
-                </div>
-                <div class="relative rounded-xl overflow-hidden h-52 md:h-full">
-                    <img src="/images/service2.png" alt="" class="w-full h-full object-cover block" />
-                    <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">Cargo
-                        Besar</p>
-                </div>
-                <div class="relative rounded-xl overflow-hidden h-52 md:h-full">
-                    <img src="/images/service3.png" alt="" class="w-full h-full object-cover block" />
-                    <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">1 Day
-                        Service</p>
-                </div>
+                </a>
+
+                <!-- Layanan 2: Cargo Besar -->
+                <a href="{{ url('/layanan/cargo-besar') }}" class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                    <img src="/images/service2.png" alt="Cargo Besar" class="w-full h-full object-cover block" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">Cargo Besar</p>
+                </a>
+
+                <!-- Layanan 3: 1 Day Service -->
+                <a href="{{ url('/layanan/one-day-service') }}" class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                    <img src="/images/service3.png" alt="1 Day Service" class="w-full h-full object-cover block" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">1 Day Service</p>
+                </a>
 
             </div>
         </div>

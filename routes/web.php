@@ -57,6 +57,19 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middl
 Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
+// Rute untuk halaman detail layanan
+Route::get('/layanan/kirim-motor', function () {
+    return view('layanan.kirim-motor');
+});
+
+Route::get('/layanan/cargo-besar', function () {
+    return view('layanan.cargo-besar');
+});
+
+Route::get('/layanan/one-day-service', function () {
+    return view('layanan.one-day-service');
+});
+
 // RUTE UNTUK CMS ADMIN
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
