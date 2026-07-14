@@ -1,63 +1,56 @@
 <x-layout>
     {{-- hero --}}
-    <section id="home" class="relative overflow-hidden bg-cover bg-center py-12 md:py-20 px-4 md:px-6"
-        style="background-image: url('{{ asset('images/bg-net.jpg') }}')">
-
-        <div class="absolute top-0 left-0 w-full h-full bg-white/80"></div>
-
-        <div
-            class="absolute bottom-0 right-0 w-full h-[45%] md:h-full md:top-0 md:w-1/2 bg-primary rounded-t-[70px] md:rounded-t-none md:rounded-l-full z-0">
+    <section id="home" class="relative overflow-hidden bg-white py-16 md:py-24 px-4 md:px-8">
+        <div class="absolute top-0 right-0 w-full md:w-[53%] h-full bg-cover bg-center bg-no-repeat hidden md:block"
+            style="background-image: url('{{ asset('images/hero.png') }}');">
         </div>
+        <div
+            class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
 
-        <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 relative z-10">
+            <!-- BAGIAN KIRI: Teks & Tombol -->
+            <div class="flex flex-col items-start gap-6 w-full md:w-3/5 lg:w-1/2">
 
-            <div class="flex flex-col items-start gap-4 text-primary">
-                <p class="font-bold tracking-wide text-sm md:text-base">Spesialis Pengiriman Motor Dari Jogja ke Seluruh
-                    Indonesia</p>
-                <div class="flex flex-col gap-2">
-                    <p class="text-3xl md:text-5xl font-extrabold leading-tight">
-                        Pusat Kirim Motor <br>
-                        Antar Kota & Pulau <br>
-                        Aman, Cepat & Bergaransi!
-                    </p>
-                    <p class="font-medium text-gray-800 mt-2 max-w-md text-sm md:text-base">
-                        Percayakan pengiriman kendaraan kesayangan Anda kepada ahlinya. Kami melayani pengiriman motor bebek, matic, sport, hingga moge dengan standar <i>packing</i> ekstra aman dan perlindungan asuransi.
-                    </p>
+                <!-- Headline -->
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                    Kirim Kargo, Motor & <br class="hidden md:block">
+                    Dokumen Lebih Mudah <br class="hidden md:block">
+                    <span class="text-primary">dari Jogja ke Seluruh <br class="hidden md:block"> Indonesia</span>
+                </h1>
+
+                <!-- Deskripsi -->
+                <p class="text-gray-600 font-medium text-base md:text-lg max-w-lg leading-relaxed">
+                    Solusi pengiriman terpercaya untuk kebutuhan bisnis maupun pribadi. Barang besar, motor, dokumen
+                    penting, semua bisa kami kirim dengan aman dan cepat.
+                </p>
+
+                <!-- Tombol Aksi (CTA) -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto">
+                    <a href="/cek-ongkir"
+                        class="w-full sm:w-auto bg-primary hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 shadow-lg transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-calculator text-lg"></i> Cek Tarif Sekarang
+                    </a>
+                    <a href="https://wa.me/6282147259393" target="_blank"
+                        class="w-full sm:w-auto border-2 border-primary text-primary hover:bg-primary/10 font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Chat via WhatsApp
+                    </a>
                 </div>
 
-                <button
-                    class="mt-2 md:mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg text-sm md:text-base">
-                    <i class="fa-brands fa-whatsapp text-xl md:text-2xl"></i>
-                    Konsultasi Kirim Motor
-                </button>
-            </div>
-
-            <div class="relative flex justify-center items-center w-full max-w-xs md:max-w-md mx-auto mt-8 md:mt-0">
-
-                <div class="swiper motorSlider w-full">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide flex justify-center items-center">
-                            <img src="{{ asset('images/motor.png') }}" alt="Motor J&T 1"
-                                class="w-full h-full drop-shadow-2xl object-contain">
-                        </div>
-
-                        <div class="swiper-slide flex justify-center items-center">
-                            <img src="{{ asset('images/motor2.png') }}" alt="Motor J&T 2"
-                                class="w-full h-full drop-shadow-2xl object-contain">
-                        </div>
-
-                        <div class="swiper-slide flex justify-center items-center">
-                            <img src="{{ asset('images/motor3.png') }}" alt="Motor J&T 3"
-                                class="w-full h-full drop-shadow-2xl object-contain">
-                        </div>
-
+                <!-- 4 Poin Keunggulan -->
+                <div
+                    class="grid grid-cols-2 md:flex md:flex-wrap items-center gap-4 md:gap-6 mt-6 md:mt-8 pt-4 border-t border-gray-100 w-full">
+                    <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                        <i class="fa-solid fa-shield-halved text-primary"></i> Aman & Terpercaya
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                        <i class="fa-solid fa-circle-nodes text-primary"></i> Tarif Kompetitif
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                        <i class="fa-solid fa-truck-pickup text-primary"></i> Layanan Pick Up
                     </div>
                 </div>
-
             </div>
 
         </div>
-
     </section>
     {{-- end hero --}}
 
@@ -153,20 +146,58 @@
     {{-- end cek ongkos --}}
 
     {{-- specialist --}}
-    <section class="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('{{ asset('images/bg-specialist.png') }}')">
-        <div class="absolute top-0 left-0 w-full h-full bg-white/70"></div>
-        <div class="grid md:grid-cols-2 gap-10 relative w-full max-w-7xl mx-auto items-center">
-            <div class="text-primary space-y-2">
-                <p class="text-3xl md:text-5xl font-bold leading-tight">Spesialis Pengiriman Motor</p>
-                <div class="font-medium">
-                    <p>Kami fokus pada pengiriman kendaraan roda dua, sehingga proses handling lebih terstandarisasi dan
-                        aman.</p>
-                    <p>Mulai dari motor matic, sport, klasik, hingga motor listrik semua ditangani dengan prosedur
-                        khusus sehingga pengiriman lebih aman.</p>
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="flex flex-col md:flex-row items-center gap-5 uppercase">
+            <div class="md:text-3xl font-bold text-nowrap">
+                <p class="text-primary">Kenapa Memilih</p>
+                <p>J&T CARGO JOGJA</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4">
+                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-clock text-primary"></i>
+                    </div>
+                    <p class="font-semibold mt-2">Cepat</p>
+                    <p class="text-gray-600 text-sm">Pengiriman ke seluruh jogja dengan waktu tercepat</p>
+                </div>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-shield-alt text-primary"></i>
+                    </div>
+                    <p class="font-semibold mt-2">Aman</p>
+                    <p class="text-gray-600 text-sm">Pengiriman barang dengan proteksi maksimal</p>
+                </div>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-tag text-primary"></i>
+                    </div>
+                    <p class="font-semibold mt-2">Tarif Kompetitif</p>
+                    <p class="text-gray-600 text-sm">Pengiriman barang dengan tarif yang kompetitif</p>
+                </div>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-binoculars text-primary"></i>
+                    </div>
+                    <p class="font-semibold mt-2">Tracking Real Time</p>
+                    <p class="text-gray-600 text-sm">Anda dapat melacak posisi paket Anda kapan saja dan di mana saja
+                    </p>
+                </div>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-headset text-primary"></i>
+                    </div>
+                    <p class="font-semibold mt-2">CS Responsif</p>
+                    <p class="text-gray-600 text-sm">Tim customer service kami siap membantu Anda kapan saja</p>
+                </div>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
+                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-clone text-primary"></i>
+                    </div>
+                    <p class="font-semibold mt-2">Banyak Pilihan </p>
+                    <p class="text-gray-600 text-sm">Kami menawarkan berbagai opsi pengiriman untuk memenuhi kebutuhan
+                        Anda</p>
                 </div>
             </div>
-            <img src="/images/specialist1.jpg" alt="" class="rounded-4xl" />
         </div>
     </section>
     {{-- end specialist --}}
@@ -240,24 +271,33 @@
             <div class="grid md:grid-cols-3 gap-6 mt-12">
 
                 <!-- Layanan 1: Kirim Motor -->
-                <a href="{{ url('/layanan/kirim-motor') }}" class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                <a href="{{ url('/layanan/kirim-motor') }}"
+                    class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
                     <img src="/images/service1.jpg" alt="Kirim Motor" class="w-full h-full object-cover block" />
                     <!-- Efek gradient gelap opsional agar teks putih lebih terbaca -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
                     <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">Kirim Motor</p>
                 </a>
 
                 <!-- Layanan 2: Cargo Besar -->
-                <a href="{{ url('/layanan/cargo-besar') }}" class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                <a href="{{ url('/layanan/cargo-besar') }}"
+                    class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
                     <img src="/images/service2.png" alt="Cargo Besar" class="w-full h-full object-cover block" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
                     <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">Cargo Besar</p>
                 </a>
 
                 <!-- Layanan 3: 1 Day Service -->
-                <a href="{{ url('/layanan/one-day-service') }}" class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+                <a href="{{ url('/layanan/one-day-service') }}"
+                    class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
                     <img src="/images/service3.png" alt="1 Day Service" class="w-full h-full object-cover block" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
                     <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">1 Day Service</p>
                 </a>
 
@@ -276,7 +316,7 @@
                     <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8971281994645!2d110.37797839999999!3d-7.8007149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f56ab42d0b%3A0x7300f64e0fe3214b!2sJ%26T%20Cargo%20Pakualaman!5e0!3m2!1sid!2sid!4v1776431730206!5m2!1sid!2sid"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="space-y-4 text-primary flex items-start flex-col">
@@ -301,7 +341,7 @@
                     <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.7224208458047!2d110.3432938!3d-7.7129048000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5f82e51ac881%3A0x68a33dfeb847fba2!2sLion%20Parcel%20-%20Purbaya%202!5e0!3m2!1sid!2sid!4v1776431783610!5m2!1sid!2sid"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="space-y-4 text-primary items-start flex flex-col">
