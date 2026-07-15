@@ -45,6 +45,9 @@
                         <i class="fa-solid fa-circle-nodes text-primary"></i> Tarif Kompetitif
                     </div>
                     <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                        <i class="fa-solid fa-location-crosshairs text-primary"></i> Tracking Real Time
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-semibold text-gray-700">
                         <i class="fa-solid fa-truck-pickup text-primary"></i> Layanan Pick Up
                     </div>
                 </div>
@@ -54,335 +57,483 @@
     </section>
     {{-- end hero --}}
 
-    {{-- cek ongkos --}}
-    {{-- <section id="cek-ongkir" class="py-12 md:py-20 px-4 md:px-6 bg-primary">
-        <div class="w-full md:w-10/12 max-w-7xl mx-auto">
-
-            <div class="text-center text-white space-y-2 md:space-y-4">
-                <h2 class="text-3xl md:text-5xl font-bold text-center">Cek Ongkos Pengiriman</h2>
-                <p class="text-sm md:text-base px-2">Isi form berikut untuk mendapatkan penawaran harga terbaik dari
-                    kami</p>
+    {{-- kenapa memilih --}}
+    <section id="kenapa-kami" class="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
+        <div class="w-full max-w-7xl mx-auto">
+            <div class="text-center uppercase mb-10">
+                <p class="text-primary text-sm font-bold tracking-wide">Kenapa Memilih</p>
+                <p class="text-2xl md:text-4xl font-extrabold text-gray-900">J&T Cargo Jogja?</p>
             </div>
 
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-white mt-8 md:mt-12">
-
-                <div class="space-y-2">
-                    <label class="text-lg md:text-xl font-medium">Kota Pengambilan</label>
-                    <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                        <select class="w-full text-black outline-none bg-transparent">
-                            <option value="0">Yogyakarta</option>
-                            <option value="1">Bali</option>
-                            <option value="2">Jakarta</option>
-                        </select>
-                    </div>
-                    <p class="text-xs md:text-sm text-gray-200">kami melayani pickup dari seluruh area jogja</p>
-                </div>
-
-                <div class="space-y-2">
-                    <label class="text-lg md:text-xl font-medium">Nomor WhatsApp</label>
-                    <input type="number" placeholder="08xx xxxx xxxx"
-                        class="bg-white w-full p-3 rounded-xl text-lg md:text-xl text-black mt-1 md:mt-2 outline-none">
-                    <p class="text-xs md:text-sm text-gray-200">Tim kami akan menghubungi via Whatsapp</p>
-                </div>
-
-                <div class="space-y-2">
-                    <label class="text-lg md:text-xl font-medium">Kecamatan</label>
-                    <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                        <select class="w-full text-black outline-none bg-transparent">
-                            <option value="0">Kotagede</option>
-                            <option value="1">Danurejan</option>
-                            <option value="2">Gedongtengen</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="space-y-2">
-                    <label class="text-lg md:text-xl font-medium">Kelurahan</label>
-                    <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                        <select class="w-full text-black outline-none bg-transparent">
-                            <option value="0">Bausasran</option>
-                            <option value="1">Tegalpanggung</option>
-                            <option value="2">Suryatmajan</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-span-1 md:col-span-2 w-full md:w-10/12 mx-auto h-px md:h-0.5 bg-white/50 my-2 md:my-0">
-                </div>
-
-                <div class="space-y-2">
-                    <label class="text-lg md:text-xl font-medium">Kota Tujuan</label>
-                    <input type="text" placeholder="Misal : Jakarta, Surabaya, Bandung"
-                        class="bg-white w-full p-3 rounded-xl text-lg md:text-xl text-black mt-1 md:mt-2 outline-none">
-                    <p class="text-xs md:text-sm text-gray-200">Untuk kalkulasi biaya yang akurat</p>
-                </div>
-
-                <div class="space-y-2">
-                    <label class="text-lg md:text-xl font-medium">Jenis Paket</label>
-                    <div class="bg-white mt-1 md:mt-2 p-3 rounded-xl text-lg md:text-xl">
-                        <select class="w-full text-black outline-none bg-transparent">
-                            <option value="0">Motor</option>
-                            <option value="1">Laptop</option>
-                            <option value="2">Baju</option>
-                        </select>
-                    </div>
-                    <p class="text-xs md:text-sm text-gray-200">Pilih jenis paket anda</p>
-                </div>
-
-                <div class="space-y-2 col-span-1 md:col-span-2">
-                    <label class="text-lg md:text-xl font-medium">Alamat Detail Penerima</label>
-                    <textarea name="" id="" cols="30" rows="4" placeholder="Kecamatan + Detail alamat lengkap"
-                        class="bg-white text-black rounded-xl text-lg md:text-xl w-full p-3 outline-none mt-1 md:mt-2"></textarea>
-                    <p class="text-xs md:text-sm text-gray-200">Penting untuk estimasi pengiriman yang tepat</p>
-                </div>
-
-                <button type="button"
-                    class="p-4 mt-2 rounded-xl col-span-1 md:col-span-2 bg-secondary hover:bg-yellow-400 transition text-primary font-bold text-xl md:text-3xl shadow-lg">
-                    Dapatkan Harga Terbaik!
-                </button>
-            </form>
-        </div>
-    </section> --}}
-    {{-- end cek ongkos --}}
-
-    {{-- specialist --}}
-    <section class="py-20 px-6 bg-gray-50">
-        <div class="flex flex-col md:flex-row items-center gap-5 uppercase">
-            <div class="md:text-3xl font-bold text-nowrap">
-                <p class="text-primary">Kenapa Memilih</p>
-                <p>J&T CARGO JOGJA</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4">
-                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-white flex flex-col justify-center items-center text-center p-5 shadow-sm rounded-2xl">
+                    <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
                         <i class="fa-solid fa-clock text-primary"></i>
                     </div>
-                    <p class="font-semibold mt-2">Cepat</p>
-                    <p class="text-gray-600 text-sm">Pengiriman ke seluruh jogja dengan waktu tercepat</p>
+                    <p class="font-bold mt-3 text-sm">Cepat</p>
+                    <p class="text-gray-500 text-xs mt-1">Pengiriman ke seluruh Indonesia dengan jaringan luas</p>
                 </div>
-                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div class="bg-white flex flex-col justify-center items-center text-center p-5 shadow-sm rounded-2xl">
+                    <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
                         <i class="fa-solid fa-shield-alt text-primary"></i>
                     </div>
-                    <p class="font-semibold mt-2">Aman</p>
-                    <p class="text-gray-600 text-sm">Pengiriman barang dengan proteksi maksimal</p>
+                    <p class="font-bold mt-3 text-sm">Aman</p>
+                    <p class="text-gray-500 text-xs mt-1">Packing profesional dan penanganan sesuai standar</p>
                 </div>
-                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <i class="fa-solid fa-tag text-primary"></i>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-5 shadow-sm rounded-2xl">
+                    <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-sack-dollar text-primary"></i>
                     </div>
-                    <p class="font-semibold mt-2">Tarif Kompetitif</p>
-                    <p class="text-gray-600 text-sm">Pengiriman barang dengan tarif yang kompetitif</p>
+                    <p class="font-bold mt-3 text-sm">Tarif Kompetitif</p>
+                    <p class="text-gray-500 text-xs mt-1">Harga lebih hemat untuk barang besar dibanding ekspedisi
+                        reguler</p>
                 </div>
-                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <i class="fa-solid fa-binoculars text-primary"></i>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-5 shadow-sm rounded-2xl">
+                    <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-location-crosshairs text-primary"></i>
                     </div>
-                    <p class="font-semibold mt-2">Tracking Real Time</p>
-                    <p class="text-gray-600 text-sm">Anda dapat melacak posisi paket Anda kapan saja dan di mana saja
-                    </p>
+                    <p class="font-bold mt-3 text-sm">Tracking Real Time</p>
+                    <p class="text-gray-500 text-xs mt-1">Pantau status kiriman kapan saja dan di mana saja</p>
                 </div>
-                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div class="bg-white flex flex-col justify-center items-center text-center p-5 shadow-sm rounded-2xl">
+                    <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
                         <i class="fa-solid fa-headset text-primary"></i>
                     </div>
-                    <p class="font-semibold mt-2">CS Responsif</p>
-                    <p class="text-gray-600 text-sm">Tim customer service kami siap membantu Anda kapan saja</p>
+                    <p class="font-bold mt-3 text-sm">CS Responsif</p>
+                    <p class="text-gray-500 text-xs mt-1">Konsultasi gratis sebelum pengiriman</p>
                 </div>
-                <div class="bg-white flex flex-col justify-center items-center text-center p-4 shadow rounded-2xl">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <i class="fa-solid fa-clone text-primary"></i>
+                <div class="bg-white flex flex-col justify-center items-center text-center p-5 shadow-sm rounded-2xl">
+                    <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                        <i class="fa-solid fa-layer-group text-primary"></i>
                     </div>
-                    <p class="font-semibold mt-2">Banyak Pilihan </p>
-                    <p class="text-gray-600 text-sm">Kami menawarkan berbagai opsi pengiriman untuk memenuhi kebutuhan
-                        Anda</p>
+                    <p class="font-bold mt-3 text-sm">Banyak Pilihan</p>
+                    <p class="text-gray-500 text-xs mt-1">Satu tempat untuk semua kebutuhan pengiriman</p>
                 </div>
             </div>
         </div>
     </section>
-    {{-- end specialist --}}
+    {{-- end kenapa memilih --}}
 
-    {{-- excellence --}}
-    <section class="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('{{ asset('images/bg-excellence.jpg') }}')">
-        <div class="absolute top-0 left-0 w-full h-full bg-white/70"></div>
-        <div class="relative w-full max-w-7xl mx-auto">
-            <p class="text-3xl md:text-5xl font-bold text-primary mb-12 text-center">Keunggulan Layanan Kami
-            </p>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white text-primary p-6 shadow rounded-xl space-y-2">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <i class="fa-solid fa-truck text-primary"></i>
-                    </div>
-                    <p class="text-2xl font-bold">Layanan Pickup</p>
-                    <p>Tidak sempat antar barang ke gudang? Kami siap jemput langsung ke lokasi Anda!</p>
-                </div>
-                <div class="bg-white text-primary p-6 shadow rounded-xl space-y-2">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <i class="fa-solid fa-bolt text-primary"></i>
-                    </div>
-                    <p class="text-2xl font-bold">Pengiriman Cepat</p>
-                    <p>Dengan layanan one day service kita dapat mengirim dengan jaminan 1 hari sampai</p>
-                </div>
-                <div class="bg-white text-primary p-6 shadow rounded-xl space-y-2">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <i class="fa-solid fa-tags text-primary"></i>
-                    </div>
-                    <p class="text-2xl font-bold">Harga Murah</p>
-                    <p>Pengiriman cargo termurah dengan layanan prima</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- end excellence --}}
-
-    {{-- about us --}}
-    <section id="tentang-kami" class="relative overflow-hidden bg-cover bg-center py-12 md:pt-20 md:pb-0 px-6"
-        style="background-image: url('{{ asset('images/bg-net.jpg') }}')">
-
-        <div class="absolute top-0 left-0 w-full h-full bg-white/70"></div>
-
-        <div class="relative grid md:grid-cols-2 items-center gap-10 max-w-7xl mx-auto">
-            <div class="">
-                <div class="w-full h-full bg-primary rounded-full flex items-center justify-center">
-                    <img src="/images/person-aboutus.png" alt="">
-                </div>
-            </div>
-            <div class=" text-primary space-y-6">
-                <p class="text-3xl md:text-5xl font-bold">Tentang Kami</p>
-                <div class="space-y-4">
-                    <p>Kami adalah mitra resmi J&T Cargo di wilayah Daerah Istimewa Yogyakarta, yang menyediakan layanan
-                        pengiriman kargo untuk kebutuhan personal maupun bisnis.</p>
-                    <p>Tidak hanya fokus pada pengiriman motor, kami juga melayani berbagai jenis pengiriman kargo
-                        lainnya dengan sistem yang aman, profesional, dan harga kompetitif.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- end about us --}}
-
-    {{-- services --}}
-    <section id="layanan" class="py-12 md:py-20 px-6 bg-primary">
+    {{-- layanan kami --}}
+    <section id="layanan" class="py-12 md:py-20 px-4 md:px-6 bg-white">
         <div class="w-full max-w-7xl mx-auto">
-            <div class="space-y-4 text-center text-white">
-                <p class="text-3xl md:text-5xl font-bold text-center">Layanan Kami</p>
-                <p>Sebagai mitra operasional J&T Cargo di area Jogjakarta dan sekitarnya, kami menangani:</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6 mt-12">
+            <p class="text-2xl md:text-4xl font-extrabold text-gray-900 text-center uppercase">Layanan Kami</p>
 
-                <!-- Layanan 1: Kirim Motor -->
-                <a href="{{ url('/layanan/kirim-motor') }}"
-                    class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
-                    <img src="/images/service1.jpg" alt="Kirim Motor" class="w-full h-full object-cover block" />
-                    <!-- Efek gradient gelap opsional agar teks putih lebih terbaca -->
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+
+                @php
+                $layanan = [
+                [
+                'no' => 1,
+                'title' => 'Pengiriman Kargo',
+                'image' => 'https://loremflickr.com/600/400/cargo,warehouse,boxes',
+                'items' => ['Mesin', 'Elektronik', 'Material Bangunan', 'Peralatan Kantor', 'Furniture', 'Produk UMKM', 'Barang Grosir', 'Peralatan Industri'],
+                'button' => 'Kirim Kargo Sekarang',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 2,
+                'title' => 'Kirim Motor',
+                'image' => 'https://loremflickr.com/600/400/motorcycle',
+                'items' => ['Motor Baru', 'Motor Bekas', 'Motor Matic', 'Motor Sport', 'Motor Touring', 'Motor Listrik'],
+                'button' => 'Cek Ongkir Motor',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 3,
+                'title' => 'Pengiriman Dokumen',
+                'image' => 'https://loremflickr.com/600/400/documents,paperwork',
+                'items' => ['Ijasah', 'Sertifikat', 'Kontrak Kerja', 'Berkas Tender', 'Dokumen Perusahaan', 'Surat Penting'],
+                'button' => 'Kirim Dokumen',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 4,
+                'title' => 'Barang Pindahan',
+                'image' => 'https://loremflickr.com/600/400/moving,house,boxes',
+                'items' => ['Rumah', 'Kos', 'Apartemen', 'Kantor', 'Gudang', 'Ruko'],
+                'button' => 'Kirim Barang Pindahan',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 5,
+                'title' => 'Pengiriman Mesin',
+                'image' => 'https://loremflickr.com/600/400/industrial,machine',
+                'items' => ['Mesin Produksi', 'Mesin Industri', 'Generator', 'Compressor', 'Mesin Pertanian'],
+                'button' => 'Kirim Mesin',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 6,
+                'title' => 'Pengiriman Furniture',
+                'image' => 'https://loremflickr.com/600/400/furniture,sofa',
+                'items' => ['Sofa', 'Lemari', 'Meja', 'Kursi', 'Kasur', 'Kitchen Set'],
+                'button' => 'Kirim Furniture',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 7,
+                'title' => 'Elektronik',
+                'image' => 'https://loremflickr.com/600/400/electronics,appliance',
+                'items' => ['TV', 'Kulkas', 'AC', 'Mesin Cuci', 'Komputer', 'Printer'],
+                'button' => 'Kirim Elektronik',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 8,
+                'title' => 'Material Bangunan',
+                'image' => 'https://loremflickr.com/600/400/construction,building,material',
+                'items' => ['Semen', 'Keramik', 'Pipa', 'Cat', 'Besi', 'Genteng'],
+                'button' => 'Kirim Material',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 9,
+                'title' => 'Pengiriman UMKM',
+                'image' => 'https://loremflickr.com/600/400/smallbusiness,product',
+                'items' => ['Fashion', 'Makanan', 'Minuman', 'Kosmetik', 'Kerajinan', 'Oleh-oleh', 'Frozen Food'],
+                'button' => 'Kirim Produk UMKM',
+                'url' => '/cek-ongkir'
+                ],
+                [
+                'no' => 10,
+                'title' => 'Pengiriman Perusahaan',
+                'image' => 'https://loremflickr.com/600/400/logistics,warehouse',
+                'items' => ['Distribusi Cabang', 'Pengiriman Proyek', 'Logistik Gudang', 'Pengiriman Sparepart', 'Pengiriman Mesin'],
+                'button' => 'Kirim untuk Perusahaan',
+                'url' => '/cek-ongkir'
+                ],
+                ];
+                @endphp
+
+                @foreach ($layanan as $item)
+                <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col">
+                    <div class="h-36 w-full overflow-hidden">
+                        <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" loading="lazy"
+                            class="w-full h-full object-cover">
                     </div>
-                    <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">Kirim Motor</p>
-                </a>
-
-                <!-- Layanan 2: Cargo Besar -->
-                <a href="{{ url('/layanan/cargo-besar') }}"
-                    class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
-                    <img src="/images/service2.png" alt="Cargo Besar" class="w-full h-full object-cover block" />
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="p-4 flex flex-col flex-1">
+                        <p class="text-primary font-extrabold uppercase text-sm mb-3">{{ $item['no'] }}.
+                            {{ $item['title'] }}
+                        </p>
+                        <ul class="grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-gray-600 mb-4 flex-1">
+                            @foreach ($item['items'] as $point)
+                            <li class="flex items-start gap-1">
+                                <span class="mt-1 w-1 h-1 rounded-full bg-primary shrink-0"></span>
+                                {{ $point }}
+                            </li>
+                            @endforeach
+                        </ul>
+                        <a href="{{ url($item['url']) }}"
+                            class="mt-auto bg-primary hover:bg-green-700 text-white text-xs font-bold text-center py-2.5 rounded-lg transition">
+                            {{ $item['button'] }}
+                        </a>
                     </div>
-                    <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">Cargo Besar</p>
-                </a>
+                </div>
+                @endforeach
 
-                <!-- Layanan 3: 1 Day Service -->
-                <a href="{{ url('/layanan/one-day-service') }}"
-                    class="block relative rounded-xl overflow-hidden h-52 md:h-full hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer group">
-                    <img src="/images/service3.png" alt="1 Day Service" class="w-full h-full object-cover block" />
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
-                    </div>
-                    <p class="absolute left-5 bottom-5 text-white text-3xl md:text-5xl font-bold">1 Day Service</p>
-                </a>
-
-            </div>
-        </div>
-    </section>
-    {{-- end services --}}
-
-    {{-- outlet location --}}
-    <section class="py-12 px-6 md:py-20 h-full">
-        <div class="w-full max-w-7xl mx-auto">
-
-            <p class="text-3xl md:text-5xl font-bold text-primary text-center">Lokasi Outlet</p>
-            <div class="grid lg:grid-cols-2 gap-8 mt-10">
-                <div class="w-full space-y-4">
-                    <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8971281994645!2d110.37797839999999!3d-7.8007149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f56ab42d0b%3A0x7300f64e0fe3214b!2sJ%26T%20Cargo%20Pakualaman!5e0!3m2!1sid!2sid!4v1776431730206!5m2!1sid!2sid"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="space-y-4 text-primary flex items-start flex-col">
-                        <p class="text-xl font-semibold">Kantor Utama</p>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-location-dot text-primary text-xl"></i>
-                            <p class="text-lg">Jl. Suryopranoto No.5D, Gunungketur, Pakualaman, Kota Yogyakarta,
-                                Daerah Istimewa Yogyakarta 55111</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-phone text-primary text-xl"></i>
-                            <p class="text-lg">Wa/Telp : 082147259393</p>
-                        </div>
+                <!-- CTA: Butuh Layanan Lain -->
+                <div class="bg-primary rounded-2xl overflow-hidden relative flex flex-col justify-center p-6 sm:col-span-2">
+                    <div class="relative z-10 text-white space-y-3 max-w-[60%]">
+                        <p class="text-xl font-extrabold">Butuh Layanan Lain?</p>
+                        <p class="text-sm text-white/90">Kami siap bantu kebutuhan pengiriman Anda!</p>
                         <a href="https://wa.me/6282147259393" target="_blank"
-                            class="mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i>
-                            Hubungi Kami
+                            class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm py-2.5 px-4 rounded-lg mt-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Konsultasi Gratis
                         </a>
                     </div>
-                </div>
-                <div class="w-full space-y-4">
-                    <div class="w-full h-52 lg:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.7224208458047!2d110.3432938!3d-7.7129048000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5f82e51ac881%3A0x68a33dfeb847fba2!2sLion%20Parcel%20-%20Purbaya%202!5e0!3m2!1sid!2sid!4v1776431783610!5m2!1sid!2sid"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="space-y-4 text-primary items-start flex flex-col">
-                        <p class="text-xl font-semibold">Kantor Cabang</p>
-
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-location-dot text-primary text-xl"></i>
-                            <p class="text-lg">Tikungan Jl. Purbaya, Paten, Tridadi, Kec. Sleman, Kabupaten Sleman,
-                                Daerah Istimewa Yogyakarta 55511, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55111</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-phone text-primary text-xl"></i>
-                            <p class="text-lg">Wa/Telp : 628137902309</p>
-                        </div>
-                        <a href="https://wa.me/628137902309" target="_blank"
-                            class="mt-4 bg-[#25D366] hover:bg-green-600 transition text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 shadow-lg">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i>
-                            Hubungi Kami
-                        </a>
-                    </div>
+                    <img src="{{ asset('images/person-aboutus.png') }}" alt="Konsultasi Gratis"
+                        class="absolute right-0 bottom-0 h-full object-contain hidden sm:block">
                 </div>
             </div>
         </div>
     </section>
-    {{-- end outlet location --}}
+    {{-- end layanan kami --}}
 
+    {{-- berbagai produk --}}
+    <section id="produk" class="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
+        <div class="w-full max-w-7xl mx-auto">
+            <p class="text-2xl md:text-4xl font-extrabold text-gray-900 text-center uppercase">Berbagai Produk Yang
+                Bisa Dikirim</p>
 
+            <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3 mt-10">
+                @php
+                $produk = [
+                ['fa-motorcycle', 'Motor'], ['fa-bicycle', 'Sepeda'], ['fa-tv', 'TV'], ['fa-wind', 'AC'],
+                ['fa-couch', 'Sofa'], ['fa-box-archive', 'Lemari'], ['fa-bed', 'Kasur'], ['fa-snowflake', 'Kulkas'],
+                ['fa-gear', 'Mesin'], ['fa-computer', 'Komputer'],
+                ['fa-print', 'Printer'], ['fa-table', 'Meja'], ['fa-chair', 'Kursi'], ['fa-store', 'Barang UMKM'],
+                ['fa-boxes-stacked', 'Produk Grosir'], ['fa-music', 'Alat Musik'], ['fa-utensils', 'Peralatan Catering'],
+                ['fa-champagne-glasses', 'Peralatan Event'], ['fa-screwdriver-wrench', 'Sparepart'], ['fa-file-lines', 'Dokumen'],
+                ['fa-industry', 'Barang Industri'], ['fa-tractor', 'Alat Pertanian'], ['fa-truck-moving', 'Barang Pindahan'],
+                ['fa-box', 'Paket Besar'], ['fa-weight-hanging', 'Paket Berat'], ['fa-shop', 'Barang Retail'],
+                ];
+                @endphp
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                @foreach ($produk as [$icon, $label])
+                <div
+                    class="bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center text-center p-3 gap-2 hover:shadow-md transition">
+                    <i class="fa-solid {{ $icon }} text-primary text-lg"></i>
+                    <p class="text-[11px] font-semibold text-gray-700 leading-tight">{{ $label }}</p>
+                </div>
+                @endforeach
 
-    <script>
-        var swiper = new Swiper(".motorSlider", {
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            effect: "fade",
-            fadeEffect: {
-                crossFade: true
-            }
-        });
-    </script>
+                <!-- CTA: produk tidak ditemukan -->
+                <div
+                    class="col-span-3 sm:col-span-5 lg:col-span-4 bg-primary rounded-xl relative overflow-hidden flex items-center justify-between gap-3 p-4">
+                    <div class="text-white relative z-10">
+                        <p class="font-bold text-sm md:text-base">Tidak menemukan produk Anda?</p>
+                        <p class="text-xs md:text-sm text-white/90 mt-1">Hubungi kami, kami siap membantu.</p>
+                        <a href="https://wa.me/6282147259393" target="_blank"
+                            class="inline-flex items-center gap-2 bg-white text-primary font-bold text-xs py-2 px-3 rounded-lg mt-3">
+                            <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
+                        </a>
+                    </div>
+                    <i class="fa-solid fa-truck-fast text-white/20 text-6xl hidden md:block"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- end berbagai produk --}}
+
+    {{-- cara pengiriman --}}
+    <section id="tracking" class="py-12 md:py-20 px-4 md:px-6 bg-white">
+        <div class="w-full max-w-7xl mx-auto">
+            <p class="text-2xl md:text-4xl font-extrabold text-gray-900 text-center uppercase mb-10">Cara Pengiriman
+            </p>
+
+            @php
+            $steps = [
+            ['fa-headset', 'Hubungi Admin'],
+            ['fa-comments', 'Konsultasi Barang'],
+            ['fa-calculator', 'Cek Tarif'],
+            ['fa-truck', 'Jemput / Antar ke Drop Point'],
+            ['fa-box', 'Packing (Opsional)'],
+            ['fa-truck-fast', 'Pengiriman'],
+            ['fa-location-dot', 'Tracking'],
+            ['fa-circle-check', 'Barang Sampai'],
+            ];
+            $stepsCount = count($steps);
+            @endphp
+
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-2">
+                @foreach ($steps as $index => [$icon, $label])
+                <div class="flex md:flex-1 flex-row md:flex-col items-center gap-4 md:gap-3 w-full md:w-auto">
+                    <div
+                        class="w-14 h-14 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                        <i class="fa-solid {{ $icon }} text-xl"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-700 text-left md:text-center">{{ $label }}</p>
+                </div>
+                @if (!$loop->last)
+                <i class="fa-solid fa-arrow-right md:fa-arrow-right text-primary/40 hidden md:block mt-5"></i>
+                @endif
+                @endforeach
+            </div>
+        </div>
+    </section>
+    {{-- end cara pengiriman --}}
+
+    {{-- area & tujuan --}}
+    <section id="area" class="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
+        <div class="w-full max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <p class="font-extrabold text-gray-900 uppercase mb-4">Area Penjemputan Jogja</p>
+                <div class="h-40 rounded-xl bg-primary/5 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-map-location-dot text-primary text-4xl"></i>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary text-xs"></i>
+                        Kota Yogyakarta</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary text-xs"></i>
+                        Sleman</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary text-xs"></i>
+                        Bantul</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary text-xs"></i>
+                        Kulon Progo</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary text-xs"></i>
+                        Gunungkidul</li>
+                </ul>
+                <p class="text-xs text-gray-400 mt-4">Layanan pick up untuk area tertentu.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm p-6">
+                <p class="font-extrabold text-gray-900 uppercase mb-4">Tujuan Pengiriman Seluruh Indonesia</p>
+                <div class="h-40 rounded-xl bg-primary/5 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-earth-asia text-primary text-4xl"></i>
+                </div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Aceh</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Medan</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Pekanbaru</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Palembang</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Jakarta</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Bandung</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Semarang</li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Solo</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Surabaya</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Malang</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Bali</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fa-solid fa-location-dot text-primary text-xs"></i> Makassar</li>
+                        <li class="flex items-center gap-2 text-gray-400"><i
+                                class="fa-solid fa-ellipsis text-primary text-xs"></i> dan ratusan kota lainnya</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-primary rounded-2xl shadow-sm p-6 text-white">
+                <p class="font-extrabold uppercase mb-4">Kenapa Bisnis Memilih J&T Cargo?</p>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5"></i> Tarif
+                        hemat untuk volume besar</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                        Pengiriman rutin</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                        Mendukung reseller & distributor</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5"></i> Cocok
+                        untuk supplier & proyek</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5"></i> Bisa
+                        kirim pallet atau partai besar</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                        Tracking online</li>
+                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-secondary mt-0.5"></i>
+                        Customer service profesional</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    {{-- end area & tujuan --}}
+
+    {{-- testimoni --}}
+    <section class="py-12 md:py-20 px-4 md:px-6 bg-white">
+        <div class="w-full max-w-5xl mx-auto">
+            <p class="text-2xl md:text-4xl font-extrabold text-gray-900 text-center uppercase mb-10">Apa Kata Mereka
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                @php
+                $testimoni = [
+                ['Andi', 'Owner Pabrik', 'Sekarang kirim mesin jadi lebih hemat.'],
+                ['Rudi', 'Pengirim Motor', 'Motor sampai dengan aman dan packing rapi.'],
+                ['Siti', 'Owner UMKM', 'Barang UMKM kami dikirim setiap minggu tanpa kendala.'],
+                ];
+                @endphp
+                @foreach ($testimoni as [$name, $role, $quote])
+                <div class="bg-gray-50 rounded-2xl p-6 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                            <i class="fa-solid fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-gray-900">{{ $name }}</p>
+                            <p class="text-xs text-gray-500">{{ $role }}</p>
+                        </div>
+                    </div>
+                    <div class="text-secondary text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic">"{{ $quote }}"</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    {{-- end testimoni --}}
+
+    {{-- faq --}}
+    <section id="faq" class="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
+        <div class="w-full max-w-7xl mx-auto">
+            <p class="text-2xl md:text-4xl font-extrabold text-gray-900 text-center uppercase mb-10">Pertanyaan Yang
+                Sering Ditanyakan</p>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 grid md:grid-cols-2 gap-4">
+                    @php
+                    $faqs = [
+                    ['Berapa maksimal berat barang yang bisa dikirim?', 'Kami melayani pengiriman untuk barang besar maupun berat, mulai dari beberapa kilogram hingga muatan dalam skala pallet/partai besar. Hubungi kami untuk konsultasi detail.'],
+                    ['Bisa dijemput?', 'Bisa. Kami menyediakan layanan pick up untuk area Yogyakarta, Sleman, Bantul, Kulon Progo, dan Gunungkidul.'],
+                    ['Apakah bisa kirim motor?', 'Bisa. Kami melayani pengiriman motor baru, bekas, matic, sport, hingga motor touring ke seluruh Indonesia.'],
+                    ['Apakah ada tracking?', 'Ada. Anda bisa memantau status kiriman secara real time kapan saja dan di mana saja.'],
+                    ['Apakah barang tersedia packing?', 'Tersedia layanan packing profesional dan sesuai standar untuk menjaga keamanan barang Anda.'],
+                    ['Apakah barang diasuransikan?', 'Barang Anda ditangani dengan proteksi maksimal, silakan konsultasikan opsi asuransi dengan tim kami.'],
+                    ];
+                    @endphp
+                    @foreach ($faqs as [$question, $answer])
+                    <details class="bg-white rounded-xl p-4 group">
+                        <summary
+                            class="flex items-center justify-between cursor-pointer list-none font-semibold text-sm text-gray-800">
+                            {{ $question }}
+                            <i class="fa-solid fa-chevron-down text-primary text-xs transition group-open:rotate-180"></i>
+                        </summary>
+                        <p class="text-xs text-gray-500 mt-3 leading-relaxed">{{ $answer }}</p>
+                    </details>
+                    @endforeach
+                </div>
+
+                <div class="bg-primary rounded-2xl p-6 flex flex-col justify-center text-white relative overflow-hidden">
+                    <div class="relative z-10 space-y-3">
+                        <p class="font-extrabold text-lg">Masih ada pertanyaan?</p>
+                        <p class="text-sm text-white/90">Tim kami siap membantu Anda.</p>
+                        <a href="https://wa.me/6282147259393" target="_blank"
+                            class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm py-2.5 px-4 rounded-lg mt-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
+                        </a>
+                    </div>
+                    <img src="{{ asset('images/cs-faq.png') }}" alt="Masih ada pertanyaan"
+                        class="absolute right-0 bottom-0 h-full object-contain hidden sm:block opacity-90">
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- end faq --}}
+
+    {{-- bottom cta --}}
+    <section id="kontak" class="bg-primary py-8 px-4 md:px-8">
+        <div
+            class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+            <div class="flex items-center gap-4">
+                <i class="fa-solid fa-truck-fast text-4xl md:text-5xl text-white/80 hidden sm:block"></i>
+                <div>
+                    <p class="text-lg md:text-2xl font-extrabold">Siap Kirim Barang Besar, Motor, atau Dokumen?</p>
+                    <p class="text-sm text-white/80 mt-1">Tim kami siap membantu merencanakan pengiriman yang aman
+                        dan solusi pengiriman yang sesuai kebutuhan Anda.</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+                <a href="/cek-ongkir"
+                    class="w-full sm:w-auto text-center bg-white text-primary font-bold py-2.5 px-5 rounded-lg hover:bg-gray-100 transition">
+                    Cek Tarif Pengiriman
+                </a>
+                <a href="https://wa.me/6282147259393" target="_blank"
+                    class="w-full sm:w-auto text-center border-2 border-white text-white font-bold py-2.5 px-5 rounded-lg hover:bg-white/10 transition">
+                    Chat Admin via WhatsApp
+                </a>
+                <a href="/minta-penjemputan"
+                    class="w-full sm:w-auto text-center border-2 border-white text-white font-bold py-2.5 px-5 rounded-lg hover:bg-white/10 transition">
+                    Minta Penjemputan
+                </a>
+            </div>
+        </div>
+    </section>
+    {{-- end bottom cta --}}
 </x-layout>
