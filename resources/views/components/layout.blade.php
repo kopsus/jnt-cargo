@@ -170,7 +170,7 @@
             </div>
             <div class="col-span-1 h-full w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126485.49891295245!2d110.315516!3d-7.778841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5840695079a7%3A0xc3ce1e4288b835e!2sJl.%20Magelang%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5099.689522775746!2d110.37719022179834!3d-7.801005176037433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f56ab42d0b%3A0x7300f64e0fe3214b!2sJ%26T%20Cargo%20Pakualaman!5e0!3m2!1sid!2sid!4v1784122891504!5m2!1sid!2sid"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>

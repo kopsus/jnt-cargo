@@ -31,7 +31,7 @@ class PickupController extends Controller
         $pickup = Pickup::create($validated);
 
         // 3. Format Pesan WhatsApp yang Baru
-        $adminWhatsApp = "62882005090497"; // Nomor admin kamu
+        $adminWhatsApp = "6282137372800"; // Nomor admin
 
         $textWa = "Halo Admin J&T Cargo, saya ingin request *Pickup Paket*. Berikut detailnya:\n\n";
         

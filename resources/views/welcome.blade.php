@@ -29,7 +29,7 @@
                         class="w-full sm:w-auto bg-primary hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 shadow-lg transition transform hover:-translate-y-1">
                         <i class="fa-solid fa-calculator text-lg"></i> Cek Tarif Sekarang
                     </a>
-                    <a href="https://wa.me/6282147259393" target="_blank"
+                    <a href="https://wa.me/6282137372800" target="_blank"
                         class="w-full sm:w-auto border-2 border-primary text-primary hover:bg-primary/10 font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
                         <i class="fa-brands fa-whatsapp text-xl"></i> Chat via WhatsApp
                     </a>
@@ -138,7 +138,7 @@
                                 'Peralatan Industri',
                             ],
                             'button' => 'Kirim Kargo Sekarang',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 2,
@@ -153,7 +153,7 @@
                                 'Motor Listrik',
                             ],
                             'button' => 'Cek Ongkir Motor',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 3,
@@ -168,7 +168,7 @@
                                 'Surat Penting',
                             ],
                             'button' => 'Kirim Dokumen',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 4,
@@ -176,7 +176,7 @@
                             'image' => '/images/services4.jpg',
                             'items' => ['Rumah', 'Kos', 'Apartemen', 'Kantor', 'Gudang', 'Ruko'],
                             'button' => 'Kirim Barang Pindahan',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 5,
@@ -190,7 +190,7 @@
                                 'Mesin Pertanian',
                             ],
                             'button' => 'Kirim Mesin',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 6,
@@ -198,7 +198,7 @@
                             'image' => '/images/services6.jpg',
                             'items' => ['Sofa', 'Lemari', 'Meja', 'Kursi', 'Kasur', 'Kitchen Set'],
                             'button' => 'Kirim Furniture',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 7,
@@ -206,7 +206,7 @@
                             'image' => '/images/services7.jpg',
                             'items' => ['TV', 'Kulkas', 'AC', 'Mesin Cuci', 'Komputer', 'Printer'],
                             'button' => 'Kirim Elektronik',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 8,
@@ -214,7 +214,7 @@
                             'image' => '/images/services8.jpg',
                             'items' => ['Semen', 'Keramik', 'Pipa', 'Cat', 'Besi', 'Genteng'],
                             'button' => 'Kirim Material',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 9,
@@ -230,7 +230,7 @@
                                 'Frozen Food',
                             ],
                             'button' => 'Kirim Produk UMKM',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                         [
                             'no' => 10,
@@ -244,7 +244,7 @@
                                 'Pengiriman Mesin',
                             ],
                             'button' => 'Kirim untuk Perusahaan',
-                            'url' => 'https://wa.me/6282147259393',
+                            'url' => 'https://wa.me/6282137372800',
                         ],
                     ];
                 @endphp
@@ -282,7 +282,7 @@
                     <div class="relative z-10 text-white space-y-3 max-w-[60%]">
                         <p class="text-xl font-extrabold">Butuh Layanan Lain?</p>
                         <p class="text-sm text-white/90">Kami siap bantu kebutuhan pengiriman Anda!</p>
-                        <a href="https://wa.me/6282147259393" target="_blank"
+                        <a href="https://wa.me/6282137372800" target="_blank"
                             class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm py-2.5 px-4 rounded-lg mt-2">
                             <i class="fa-brands fa-whatsapp text-lg"></i> Konsultasi Gratis
                         </a>
@@ -347,7 +347,7 @@
                     <div class="text-white relative z-10">
                         <p class="font-bold text-sm md:text-base">Tidak menemukan produk Anda?</p>
                         <p class="text-xs md:text-sm text-white/90 mt-1">Hubungi kami, kami siap membantu.</p>
-                        <a href="https://wa.me/6282147259393" target="_blank"
+                        <a href="https://wa.me/6282137372800" target="_blank"
                             class="inline-flex items-center gap-2 bg-white text-primary font-bold text-xs py-2 px-3 rounded-lg mt-3">
                             <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
                         </a>
@@ -577,7 +577,7 @@
                     class="bg-primary rounded-2xl p-6 flex flex-col justify-center items-center text-white relative overflow-hidden">
                     <p class="font-extrabold text-lg">Masih ada pertanyaan?</p>
                     <p class="text-sm text-white/90">Tim kami siap membantu Anda.</p>
-                    <a href="https://wa.me/6282147259393" target="_blank"
+                    <a href="https://wa.me/6282137372800" target="_blank"
                         class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm py-2.5 px-4 rounded-lg mt-2">
                         <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
                     </a>
@@ -601,7 +601,7 @@
                 <p class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase">Kantor Pusat</p>
                 <p class="text-sm text-gray-600">Jl. Suryopranoto No.5D, Gunungketur, Pakualaman, Kota Yogyakarta,
                     Daerah Istimewa Yogyakarta 55111</p>
-                <a href="https://wa.me/6282147259393" target="_blank"
+                <a href="https://wa.me/6282137372800" target="_blank"
                     class="inline-flex items-center gap-2 bg-primary text-white font-bold text-sm py-2.5 px-4 rounded-lg hover:bg-green-700 transition">
                     <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
                 </a>
@@ -617,7 +617,7 @@
             <div class="flex flex-col justify-center items-start gap-4 p-6">
                 <p class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase">Kantor Cabang</p>
                 <p class="text-sm text-gray-600">Tridadi, Sleman Regency, Special Region of Yogyakarta</p>
-                <a href="https://wa.me/6282147259393" target="_blank"
+                <a href="https://wa.me/6282137372800" target="_blank"
                     class="inline-flex items-center gap-2 bg-primary text-white font-bold text-sm py-2.5 px-4 rounded-lg hover:bg-green-700 transition">
                     <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
                 </a>
@@ -642,7 +642,7 @@
                     class="w-full sm:w-auto text-center bg-white text-primary font-bold py-2.5 px-5 rounded-lg hover:bg-gray-100 transition">
                     Cek Tarif Pengiriman
                 </a>
-                <a href="https://wa.me/6282147259393" target="_blank"
+                <a href="https://wa.me/6282137372800" target="_blank"
                     class="w-full sm:w-auto text-center border-2 border-white text-white font-bold py-2.5 px-5 rounded-lg hover:bg-white/10 transition">
                     Chat Admin via WhatsApp
                 </a>
