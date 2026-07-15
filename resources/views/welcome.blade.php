@@ -122,118 +122,163 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
 
                 @php
-                $layanan = [
-                [
-                'no' => 1,
-                'title' => 'Pengiriman Kargo',
-                'image' => 'https://loremflickr.com/600/400/cargo,warehouse,boxes',
-                'items' => ['Mesin', 'Elektronik', 'Material Bangunan', 'Peralatan Kantor', 'Furniture', 'Produk UMKM', 'Barang Grosir', 'Peralatan Industri'],
-                'button' => 'Kirim Kargo Sekarang',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 2,
-                'title' => 'Kirim Motor',
-                'image' => 'https://loremflickr.com/600/400/motorcycle',
-                'items' => ['Motor Baru', 'Motor Bekas', 'Motor Matic', 'Motor Sport', 'Motor Touring', 'Motor Listrik'],
-                'button' => 'Cek Ongkir Motor',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 3,
-                'title' => 'Pengiriman Dokumen',
-                'image' => 'https://loremflickr.com/600/400/documents,paperwork',
-                'items' => ['Ijasah', 'Sertifikat', 'Kontrak Kerja', 'Berkas Tender', 'Dokumen Perusahaan', 'Surat Penting'],
-                'button' => 'Kirim Dokumen',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 4,
-                'title' => 'Barang Pindahan',
-                'image' => 'https://loremflickr.com/600/400/moving,house,boxes',
-                'items' => ['Rumah', 'Kos', 'Apartemen', 'Kantor', 'Gudang', 'Ruko'],
-                'button' => 'Kirim Barang Pindahan',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 5,
-                'title' => 'Pengiriman Mesin',
-                'image' => 'https://loremflickr.com/600/400/industrial,machine',
-                'items' => ['Mesin Produksi', 'Mesin Industri', 'Generator', 'Compressor', 'Mesin Pertanian'],
-                'button' => 'Kirim Mesin',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 6,
-                'title' => 'Pengiriman Furniture',
-                'image' => 'https://loremflickr.com/600/400/furniture,sofa',
-                'items' => ['Sofa', 'Lemari', 'Meja', 'Kursi', 'Kasur', 'Kitchen Set'],
-                'button' => 'Kirim Furniture',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 7,
-                'title' => 'Elektronik',
-                'image' => 'https://loremflickr.com/600/400/electronics,appliance',
-                'items' => ['TV', 'Kulkas', 'AC', 'Mesin Cuci', 'Komputer', 'Printer'],
-                'button' => 'Kirim Elektronik',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 8,
-                'title' => 'Material Bangunan',
-                'image' => 'https://loremflickr.com/600/400/construction,building,material',
-                'items' => ['Semen', 'Keramik', 'Pipa', 'Cat', 'Besi', 'Genteng'],
-                'button' => 'Kirim Material',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 9,
-                'title' => 'Pengiriman UMKM',
-                'image' => 'https://loremflickr.com/600/400/smallbusiness,product',
-                'items' => ['Fashion', 'Makanan', 'Minuman', 'Kosmetik', 'Kerajinan', 'Oleh-oleh', 'Frozen Food'],
-                'button' => 'Kirim Produk UMKM',
-                'url' => '/cek-ongkir'
-                ],
-                [
-                'no' => 10,
-                'title' => 'Pengiriman Perusahaan',
-                'image' => 'https://loremflickr.com/600/400/logistics,warehouse',
-                'items' => ['Distribusi Cabang', 'Pengiriman Proyek', 'Logistik Gudang', 'Pengiriman Sparepart', 'Pengiriman Mesin'],
-                'button' => 'Kirim untuk Perusahaan',
-                'url' => '/cek-ongkir'
-                ],
-                ];
+                    $layanan = [
+                        [
+                            'no' => 1,
+                            'title' => 'Pengiriman Kargo',
+                            'image' => '/images/services1.jpg',
+                            'items' => [
+                                'Mesin',
+                                'Elektronik',
+                                'Material Bangunan',
+                                'Peralatan Kantor',
+                                'Furniture',
+                                'Produk UMKM',
+                                'Barang Grosir',
+                                'Peralatan Industri',
+                            ],
+                            'button' => 'Kirim Kargo Sekarang',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 2,
+                            'title' => 'Kirim Motor',
+                            'image' => '/images/services2.jpg',
+                            'items' => [
+                                'Motor Baru',
+                                'Motor Bekas',
+                                'Motor Matic',
+                                'Motor Sport',
+                                'Motor Touring',
+                                'Motor Listrik',
+                            ],
+                            'button' => 'Cek Ongkir Motor',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 3,
+                            'title' => 'Pengiriman Dokumen',
+                            'image' => '/images/services3.jpg',
+                            'items' => [
+                                'Ijasah',
+                                'Sertifikat',
+                                'Kontrak Kerja',
+                                'Berkas Tender',
+                                'Dokumen Perusahaan',
+                                'Surat Penting',
+                            ],
+                            'button' => 'Kirim Dokumen',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 4,
+                            'title' => 'Barang Pindahan',
+                            'image' => '/images/services4.jpg',
+                            'items' => ['Rumah', 'Kos', 'Apartemen', 'Kantor', 'Gudang', 'Ruko'],
+                            'button' => 'Kirim Barang Pindahan',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 5,
+                            'title' => 'Pengiriman Mesin',
+                            'image' => '/images/services5.jpg',
+                            'items' => [
+                                'Mesin Produksi',
+                                'Mesin Industri',
+                                'Generator',
+                                'Compressor',
+                                'Mesin Pertanian',
+                            ],
+                            'button' => 'Kirim Mesin',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 6,
+                            'title' => 'Pengiriman Furniture',
+                            'image' => '/images/services6.jpg',
+                            'items' => ['Sofa', 'Lemari', 'Meja', 'Kursi', 'Kasur', 'Kitchen Set'],
+                            'button' => 'Kirim Furniture',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 7,
+                            'title' => 'Elektronik',
+                            'image' => '/images/services7.jpg',
+                            'items' => ['TV', 'Kulkas', 'AC', 'Mesin Cuci', 'Komputer', 'Printer'],
+                            'button' => 'Kirim Elektronik',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 8,
+                            'title' => 'Material Bangunan',
+                            'image' => '/images/services8.jpg',
+                            'items' => ['Semen', 'Keramik', 'Pipa', 'Cat', 'Besi', 'Genteng'],
+                            'button' => 'Kirim Material',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 9,
+                            'title' => 'Pengiriman UMKM',
+                            'image' => '/images/services9.jpg',
+                            'items' => [
+                                'Fashion',
+                                'Makanan',
+                                'Minuman',
+                                'Kosmetik',
+                                'Kerajinan',
+                                'Oleh-oleh',
+                                'Frozen Food',
+                            ],
+                            'button' => 'Kirim Produk UMKM',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                        [
+                            'no' => 10,
+                            'title' => 'Pengiriman Perusahaan',
+                            'image' => '/images/services10.jpg',
+                            'items' => [
+                                'Distribusi Cabang',
+                                'Pengiriman Proyek',
+                                'Logistik Gudang',
+                                'Pengiriman Sparepart',
+                                'Pengiriman Mesin',
+                            ],
+                            'button' => 'Kirim untuk Perusahaan',
+                            'url' => 'https://wa.me/6282147259393',
+                        ],
+                    ];
                 @endphp
 
                 @foreach ($layanan as $item)
-                <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col">
-                    <div class="h-36 w-full overflow-hidden">
-                        <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" loading="lazy"
-                            class="w-full h-full object-cover">
+                    <div
+                        class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col">
+                        <div class="h-36 w-full overflow-hidden">
+                            <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" loading="lazy"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4 flex flex-col flex-1">
+                            <p class="text-primary font-extrabold uppercase text-sm mb-3">{{ $item['no'] }}.
+                                {{ $item['title'] }}
+                            </p>
+                            <ul class="grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-gray-600 mb-4 flex-1">
+                                @foreach ($item['items'] as $point)
+                                    <li class="flex items-start gap-1">
+                                        <span class="mt-1 w-1 h-1 rounded-full bg-primary shrink-0"></span>
+                                        {{ $point }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <a href="{{ url($item['url']) }}"
+                                class="mt-auto bg-primary hover:bg-green-700 text-white text-xs font-bold text-center py-2.5 rounded-lg transition">
+                                {{ $item['button'] }}
+                            </a>
+                        </div>
                     </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <p class="text-primary font-extrabold uppercase text-sm mb-3">{{ $item['no'] }}.
-                            {{ $item['title'] }}
-                        </p>
-                        <ul class="grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-gray-600 mb-4 flex-1">
-                            @foreach ($item['items'] as $point)
-                            <li class="flex items-start gap-1">
-                                <span class="mt-1 w-1 h-1 rounded-full bg-primary shrink-0"></span>
-                                {{ $point }}
-                            </li>
-                            @endforeach
-                        </ul>
-                        <a href="{{ url($item['url']) }}"
-                            class="mt-auto bg-primary hover:bg-green-700 text-white text-xs font-bold text-center py-2.5 rounded-lg transition">
-                            {{ $item['button'] }}
-                        </a>
-                    </div>
-                </div>
                 @endforeach
 
                 <!-- CTA: Butuh Layanan Lain -->
-                <div class="bg-primary rounded-2xl overflow-hidden relative flex flex-col justify-center p-6 sm:col-span-2">
+                <div
+                    class="bg-primary rounded-2xl overflow-hidden relative flex flex-col justify-center p-6 sm:col-span-2">
                     <div class="relative z-10 text-white space-y-3 max-w-[60%]">
                         <p class="text-xl font-extrabold">Butuh Layanan Lain?</p>
                         <p class="text-sm text-white/90">Kami siap bantu kebutuhan pengiriman Anda!</p>
@@ -258,24 +303,42 @@
 
             <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3 mt-10">
                 @php
-                $produk = [
-                ['fa-motorcycle', 'Motor'], ['fa-bicycle', 'Sepeda'], ['fa-tv', 'TV'], ['fa-wind', 'AC'],
-                ['fa-couch', 'Sofa'], ['fa-box-archive', 'Lemari'], ['fa-bed', 'Kasur'], ['fa-snowflake', 'Kulkas'],
-                ['fa-gear', 'Mesin'], ['fa-computer', 'Komputer'],
-                ['fa-print', 'Printer'], ['fa-table', 'Meja'], ['fa-chair', 'Kursi'], ['fa-store', 'Barang UMKM'],
-                ['fa-boxes-stacked', 'Produk Grosir'], ['fa-music', 'Alat Musik'], ['fa-utensils', 'Peralatan Catering'],
-                ['fa-champagne-glasses', 'Peralatan Event'], ['fa-screwdriver-wrench', 'Sparepart'], ['fa-file-lines', 'Dokumen'],
-                ['fa-industry', 'Barang Industri'], ['fa-tractor', 'Alat Pertanian'], ['fa-truck-moving', 'Barang Pindahan'],
-                ['fa-box', 'Paket Besar'], ['fa-weight-hanging', 'Paket Berat'], ['fa-shop', 'Barang Retail'],
-                ];
+                    $produk = [
+                        ['fa-motorcycle', 'Motor'],
+                        ['fa-bicycle', 'Sepeda'],
+                        ['fa-tv', 'TV'],
+                        ['fa-wind', 'AC'],
+                        ['fa-couch', 'Sofa'],
+                        ['fa-box-archive', 'Lemari'],
+                        ['fa-bed', 'Kasur'],
+                        ['fa-snowflake', 'Kulkas'],
+                        ['fa-gear', 'Mesin'],
+                        ['fa-computer', 'Komputer'],
+                        ['fa-print', 'Printer'],
+                        ['fa-table', 'Meja'],
+                        ['fa-chair', 'Kursi'],
+                        ['fa-store', 'Barang UMKM'],
+                        ['fa-boxes-stacked', 'Produk Grosir'],
+                        ['fa-music', 'Alat Musik'],
+                        ['fa-utensils', 'Peralatan Catering'],
+                        ['fa-champagne-glasses', 'Peralatan Event'],
+                        ['fa-screwdriver-wrench', 'Sparepart'],
+                        ['fa-file-lines', 'Dokumen'],
+                        ['fa-industry', 'Barang Industri'],
+                        ['fa-tractor', 'Alat Pertanian'],
+                        ['fa-truck-moving', 'Barang Pindahan'],
+                        ['fa-box', 'Paket Besar'],
+                        ['fa-weight-hanging', 'Paket Berat'],
+                        ['fa-shop', 'Barang Retail'],
+                    ];
                 @endphp
 
                 @foreach ($produk as [$icon, $label])
-                <div
-                    class="bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center text-center p-3 gap-2 hover:shadow-md transition">
-                    <i class="fa-solid {{ $icon }} text-primary text-lg"></i>
-                    <p class="text-[11px] font-semibold text-gray-700 leading-tight">{{ $label }}</p>
-                </div>
+                    <div
+                        class="bg-white rounded-xl border border-gray-100 shadow-sm flex flex-col items-center justify-center text-center p-3 gap-2 hover:shadow-md transition">
+                        <i class="fa-solid {{ $icon }} text-primary text-lg"></i>
+                        <p class="text-[11px] font-semibold text-gray-700 leading-tight">{{ $label }}</p>
+                    </div>
                 @endforeach
 
                 <!-- CTA: produk tidak ditemukan -->
@@ -303,31 +366,32 @@
             </p>
 
             @php
-            $steps = [
-            ['fa-headset', 'Hubungi Admin'],
-            ['fa-comments', 'Konsultasi Barang'],
-            ['fa-calculator', 'Cek Tarif'],
-            ['fa-truck', 'Jemput / Antar ke Drop Point'],
-            ['fa-box', 'Packing (Opsional)'],
-            ['fa-truck-fast', 'Pengiriman'],
-            ['fa-location-dot', 'Tracking'],
-            ['fa-circle-check', 'Barang Sampai'],
-            ];
-            $stepsCount = count($steps);
+                $steps = [
+                    ['fa-headset', 'Hubungi Admin'],
+                    ['fa-comments', 'Konsultasi Barang'],
+                    ['fa-calculator', 'Cek Tarif'],
+                    ['fa-truck', 'Jemput / Antar ke Drop Point'],
+                    ['fa-box', 'Packing (Opsional)'],
+                    ['fa-truck-fast', 'Pengiriman'],
+                    ['fa-location-dot', 'Tracking'],
+                    ['fa-circle-check', 'Barang Sampai'],
+                ];
+                $stepsCount = count($steps);
             @endphp
 
             <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-2">
                 @foreach ($steps as $index => [$icon, $label])
-                <div class="flex md:flex-1 flex-row md:flex-col items-center gap-4 md:gap-3 w-full md:w-auto">
-                    <div
-                        class="w-14 h-14 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
-                        <i class="fa-solid {{ $icon }} text-xl"></i>
+                    <div class="flex md:flex-1 flex-row md:flex-col items-center gap-4 md:gap-3 w-full md:w-auto">
+                        <div
+                            class="w-14 h-14 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                            <i class="fa-solid {{ $icon }} text-xl"></i>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-700 text-left md:text-center">{{ $label }}
+                        </p>
                     </div>
-                    <p class="text-sm font-semibold text-gray-700 text-left md:text-center">{{ $label }}</p>
-                </div>
-                @if (!$loop->last)
-                <i class="fa-solid fa-arrow-right md:fa-arrow-right text-primary/40 hidden md:block mt-5"></i>
-                @endif
+                    @if (!$loop->last)
+                        <i class="fa-solid fa-arrow-right md:fa-arrow-right text-primary/40 hidden md:block mt-5"></i>
+                    @endif
                 @endforeach
             </div>
         </div>
@@ -428,32 +492,32 @@
 
             <div class="grid md:grid-cols-3 gap-6">
                 @php
-                $testimoni = [
-                ['Andi', 'Owner Pabrik', 'Sekarang kirim mesin jadi lebih hemat.'],
-                ['Rudi', 'Pengirim Motor', 'Motor sampai dengan aman dan packing rapi.'],
-                ['Siti', 'Owner UMKM', 'Barang UMKM kami dikirim setiap minggu tanpa kendala.'],
-                ];
+                    $testimoni = [
+                        ['Andi', 'Owner Pabrik', 'Sekarang kirim mesin jadi lebih hemat.'],
+                        ['Rudi', 'Pengirim Motor', 'Motor sampai dengan aman dan packing rapi.'],
+                        ['Siti', 'Owner UMKM', 'Barang UMKM kami dikirim setiap minggu tanpa kendala.'],
+                    ];
                 @endphp
                 @foreach ($testimoni as [$name, $role, $quote])
-                <div class="bg-gray-50 rounded-2xl p-6 space-y-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
-                            <i class="fa-solid fa-user text-primary"></i>
+                    <div class="bg-gray-50 rounded-2xl p-6 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                                <i class="fa-solid fa-user text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-gray-900">{{ $name }}</p>
+                                <p class="text-xs text-gray-500">{{ $role }}</p>
+                            </div>
                         </div>
-                        <div>
-                            <p class="font-bold text-sm text-gray-900">{{ $name }}</p>
-                            <p class="text-xs text-gray-500">{{ $role }}</p>
+                        <div class="text-secondary text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
+                        <p class="text-sm text-gray-600 italic">"{{ $quote }}"</p>
                     </div>
-                    <div class="text-secondary text-sm">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-sm text-gray-600 italic">"{{ $quote }}"</p>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -469,38 +533,55 @@
             <div class="grid lg:grid-cols-3 gap-6">
                 <div class="lg:col-span-2 grid md:grid-cols-2 gap-4">
                     @php
-                    $faqs = [
-                    ['Berapa maksimal berat barang yang bisa dikirim?', 'Kami melayani pengiriman untuk barang besar maupun berat, mulai dari beberapa kilogram hingga muatan dalam skala pallet/partai besar. Hubungi kami untuk konsultasi detail.'],
-                    ['Bisa dijemput?', 'Bisa. Kami menyediakan layanan pick up untuk area Yogyakarta, Sleman, Bantul, Kulon Progo, dan Gunungkidul.'],
-                    ['Apakah bisa kirim motor?', 'Bisa. Kami melayani pengiriman motor baru, bekas, matic, sport, hingga motor touring ke seluruh Indonesia.'],
-                    ['Apakah ada tracking?', 'Ada. Anda bisa memantau status kiriman secara real time kapan saja dan di mana saja.'],
-                    ['Apakah barang tersedia packing?', 'Tersedia layanan packing profesional dan sesuai standar untuk menjaga keamanan barang Anda.'],
-                    ['Apakah barang diasuransikan?', 'Barang Anda ditangani dengan proteksi maksimal, silakan konsultasikan opsi asuransi dengan tim kami.'],
-                    ];
+                        $faqs = [
+                            [
+                                'Berapa maksimal berat barang yang bisa dikirim?',
+                                'Kami melayani pengiriman untuk barang besar maupun berat, mulai dari beberapa kilogram hingga muatan dalam skala pallet/partai besar. Hubungi kami untuk konsultasi detail.',
+                            ],
+                            [
+                                'Bisa dijemput?',
+                                'Bisa. Kami menyediakan layanan pick up untuk area Yogyakarta, Sleman, Bantul, Kulon Progo, dan Gunungkidul.',
+                            ],
+                            [
+                                'Apakah bisa kirim motor?',
+                                'Bisa. Kami melayani pengiriman motor baru, bekas, matic, sport, hingga motor touring ke seluruh Indonesia.',
+                            ],
+                            [
+                                'Apakah ada tracking?',
+                                'Ada. Anda bisa memantau status kiriman secara real time kapan saja dan di mana saja.',
+                            ],
+                            [
+                                'Apakah barang tersedia packing?',
+                                'Tersedia layanan packing profesional dan sesuai standar untuk menjaga keamanan barang Anda.',
+                            ],
+                            [
+                                'Apakah barang diasuransikan?',
+                                'Barang Anda ditangani dengan proteksi maksimal, silakan konsultasikan opsi asuransi dengan tim kami.',
+                            ],
+                        ];
                     @endphp
                     @foreach ($faqs as [$question, $answer])
-                    <details class="bg-white rounded-xl p-4 group">
-                        <summary
-                            class="flex items-center justify-between cursor-pointer list-none font-semibold text-sm text-gray-800">
-                            {{ $question }}
-                            <i class="fa-solid fa-chevron-down text-primary text-xs transition group-open:rotate-180"></i>
-                        </summary>
-                        <p class="text-xs text-gray-500 mt-3 leading-relaxed">{{ $answer }}</p>
-                    </details>
+                        <details class="bg-white rounded-xl p-4 group">
+                            <summary
+                                class="flex items-center justify-between cursor-pointer list-none font-semibold text-sm text-gray-800">
+                                {{ $question }}
+                                <i
+                                    class="fa-solid fa-chevron-down text-primary text-xs transition group-open:rotate-180"></i>
+                            </summary>
+                            <p class="text-xs text-gray-500 mt-3 leading-relaxed">{{ $answer }}</p>
+                        </details>
                     @endforeach
                 </div>
 
-                <div class="bg-primary rounded-2xl p-6 flex flex-col justify-center text-white relative overflow-hidden">
-                    <div class="relative z-10 space-y-3">
-                        <p class="font-extrabold text-lg">Masih ada pertanyaan?</p>
-                        <p class="text-sm text-white/90">Tim kami siap membantu Anda.</p>
-                        <a href="https://wa.me/6282147259393" target="_blank"
-                            class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm py-2.5 px-4 rounded-lg mt-2">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
-                        </a>
-                    </div>
-                    <img src="{{ asset('images/cs-faq.png') }}" alt="Masih ada pertanyaan"
-                        class="absolute right-0 bottom-0 h-full object-contain hidden sm:block opacity-90">
+                <div
+                    class="bg-primary rounded-2xl p-6 flex flex-col justify-center items-center text-white relative overflow-hidden">
+                    <p class="font-extrabold text-lg">Masih ada pertanyaan?</p>
+                    <p class="text-sm text-white/90">Tim kami siap membantu Anda.</p>
+                    <a href="https://wa.me/6282147259393" target="_blank"
+                        class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm py-2.5 px-4 rounded-lg mt-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -509,8 +590,7 @@
 
     {{-- bottom cta --}}
     <section id="kontak" class="bg-primary py-8 px-4 md:px-8">
-        <div
-            class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+        <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-white">
             <div class="flex items-center gap-4">
                 <i class="fa-solid fa-truck-fast text-4xl md:text-5xl text-white/80 hidden sm:block"></i>
                 <div>

@@ -21,30 +21,30 @@
 <body>
     {{-- header --}}
     @php
-    // Ambil semua voucher yang aktif dari database
-    $vouchers = \App\Models\Voucher::where('is_active', true)->get();
+        // Ambil semua voucher yang aktif dari database
+        $vouchers = \App\Models\Voucher::where('is_active', true)->get();
     @endphp
 
     @if ($vouchers->count() > 0)
-    <div class="bg-primary py-3 md:py-4" id="voucher-banner">
-        <div
-            class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
-            <p id="voucher-title" class="text-white text-sm md:text-base text-center">
-                Memuat promo...
-            </p>
-
-            <div class="flex items-center gap-4">
-                <a id="voucher-link" href="#" target="_blank"
-                    class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base transition hover:bg-white">
-                    Klaim Sekarang
-                </a>
-
-                <p id="voucher-timer" class="text-secondary font-bold text-xl md:text-3xl">
-                    00:00:00
+        <div class="bg-primary py-3 md:py-4" id="voucher-banner">
+            <div
+                class="w-full max-w-7xl px-4 md:px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+                <p id="voucher-title" class="text-white text-sm md:text-base text-center">
+                    Memuat promo...
                 </p>
+
+                <div class="flex items-center gap-4">
+                    <a id="voucher-link" href="#" target="_blank"
+                        class="bg-secondary text-primary font-bold py-1.5 px-3 md:py-2 md:px-4 rounded text-sm md:text-base transition hover:bg-white">
+                        Klaim Sekarang
+                    </a>
+
+                    <p id="voucher-timer" class="text-secondary font-bold text-xl md:text-3xl">
+                        00:00:00
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
     @endif
 
     <header class="bg-white py-4 shadow z-50 relative">
@@ -63,10 +63,10 @@
                         <a href="/#layanan" class="nav-link hover:text-primary transition"
                             data-target="layanan">Layanan</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="/#tentang-kami" class="nav-link hover:text-primary transition"
                             data-target="tentang-kami">Tentang Kami</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="/article"
                             class="{{ request()->is('article') ? 'font-bold text-primary' : 'hover:text-primary transition' }}">Artikel</a>
@@ -153,7 +153,7 @@
                     <a href="https://www.instagram.com/daya.log/" target="_blank">
                         <i class="fa-brands fa-instagram text-2xl"></i>
                     </a>
-                    <a href="https://www.tiktok.com/daya.log/" target="_blank">
+                    <a href="https://www.tiktok.com/@daya.log" target="_blank">
                         <i class="fa-brands fa-tiktok text-2xl"></i>
                     </a>
                 </div>
@@ -163,7 +163,7 @@
                 <ul class="space-y-2 mt-4">
                     <li><a href="/">Home</a></li>
                     <li><a href="#">Layanan</a></li>
-                    <li><a href="#">Tentang Kami</a></li>
+                    {{-- <li><a href="#">Tentang Kami</a></li> --}}
                     <li><a href="#">Artikel</a></li>
                     <li><a href="#">Cek Ongkir</a></li>
                 </ul>
