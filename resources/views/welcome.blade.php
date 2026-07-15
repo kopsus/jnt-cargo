@@ -588,6 +588,44 @@
     </section>
     {{-- end faq --}}
 
+    {{-- maps --}}
+    <div class="py-8 px-4 md:px-8 grid md:grid-cols-2">
+        <div class="flex flex-col justify-center items-start gap-4 p-6">
+            <section id="maps" class="w-full h-56 md:h-96 rounded-2xl overflow-hidden">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5099.689522775746!2d110.37719022179834!3d-7.801005176037433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f56ab42d0b%3A0x7300f64e0fe3214b!2sJ%26T%20Cargo%20Pakualaman!5e0!3m2!1sid!2sid!4v1784122891504!5m2!1sid!2sid"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </section>
+            <div class="flex flex-col justify-center items-start gap-4 p-6">
+                <p class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase">Kantor Pusat</p>
+                <p class="text-sm text-gray-600">Jl. Suryopranoto No.5D, Gunungketur, Pakualaman, Kota Yogyakarta,
+                    Daerah Istimewa Yogyakarta 55111</p>
+                <a href="https://wa.me/6282147259393" target="_blank"
+                    class="inline-flex items-center gap-2 bg-primary text-white font-bold text-sm py-2.5 px-4 rounded-lg hover:bg-green-700 transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center items-start gap-4 p-6">
+            <section id="maps" class="w-full h-56 md:h-96 rounded-2xl overflow-hidden">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3953.72268259777!2d110.34064097500416!3d-7.7128767923049235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNDInNDYuNCJTIDExMMKwMjAnMzUuNiJF!5e0!3m2!1sen!2sid!4v1784122931231!5m2!1sen!2sid"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </section>
+            <div class="flex flex-col justify-center items-start gap-4 p-6">
+                <p class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase">Kantor Cabang</p>
+                <p class="text-sm text-gray-600">Tridadi, Sleman Regency, Special Region of Yogyakarta</p>
+                <a href="https://wa.me/6282147259393" target="_blank"
+                    class="inline-flex items-center gap-2 bg-primary text-white font-bold text-sm py-2.5 px-4 rounded-lg hover:bg-green-700 transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Chat via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    {{-- end maps --}}
+
     {{-- bottom cta --}}
     <section id="kontak" class="bg-primary py-8 px-4 md:px-8">
         <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-white">
