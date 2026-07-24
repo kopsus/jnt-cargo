@@ -86,6 +86,17 @@
                                         class="px-3 py-1 rounded-full text-xs font-bold {{ $colors[$pickup->status] ?? 'bg-gray-100 text-gray-700' }}">
                                         {{ $pickup->status }}
                                     </span>
+                                    <div class="mt-3">
+                                        <p class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Petugas
+                                            Kurir:</p>
+                                        @if ($pickup->kurir)
+                                            <p class="text-sm font-bold text-gray-800"><i
+                                                    class="fa-solid fa-user text-primary mr-1"></i>
+                                                {{ $pickup->kurir }}</p>
+                                        @else
+                                            <p class="text-xs font-medium text-red-500 italic">Belum ditugaskan</p>
+                                        @endif
+                                    </div>
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">

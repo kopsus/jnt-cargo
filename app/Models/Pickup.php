@@ -18,6 +18,7 @@ class Pickup extends Model
         'jenis',
         'berat',
         'koordinat',
-        'status'
+        'status',
+        'kurir'
     ];
 }

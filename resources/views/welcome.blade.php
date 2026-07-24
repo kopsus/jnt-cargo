@@ -646,10 +646,7 @@
                     class="w-full sm:w-auto text-center border-2 border-white text-white font-bold py-2.5 px-5 rounded-lg hover:bg-white/10 transition">
                     Chat Admin via WhatsApp
                 </a>
-                <a href="/minta-penjemputan"
-                    class="w-full sm:w-auto text-center border-2 border-white text-white font-bold py-2.5 px-5 rounded-lg hover:bg-white/10 transition">
-                    Minta Penjemputan
-                </a>
+
             </div>
         </div>
     </section>

@@ -25,12 +25,14 @@
                 @csrf
                 @method('PUT')
 
-                <!-- KOTAK UPDATE STATUS KHUSUS -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8">
-                    <h2 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">
-                        <i class="fa-solid fa-truck-fast text-primary mr-2"></i> Update Status Penjemputan
-                    </h2>
+                <div
+                    class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Pilihan Status -->
                     <div class="space-y-2">
+                        <h2 class="text-lg font-bold text-gray-800 mb-2">
+                            <i class="fa-solid fa-truck-fast text-primary mr-2"></i> Update Status
+                        </h2>
                         <select name="status"
                             class="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition text-lg font-bold">
                             @php
@@ -44,6 +46,17 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <!-- Input Nama Kurir -->
+                    <div class="space-y-2">
+                        <h2 class="text-lg font-bold text-gray-800 mb-2">
+                            <i class="fa-solid fa-user-helmet-safety text-primary"></i> Petugas Kurir
+                        </h2>
+                        <input type="text" name="kurir" value="{{ old('kurir', $pickup->kurir) }}"
+                            placeholder="Ketik nama kurir yang bertugas..."
+                            class="w-full border border-gray-300 px-4 py-3 rounded-lg outline-none focus:border-primary transition text-lg">
+                    </div>
+
                 </div>
 
                 <h2 class="text-lg font-bold text-gray-800 border-b pb-2">Data Pickup (Bisa Diedit Jika Ada Typo)</h2>

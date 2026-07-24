@@ -21,33 +21,30 @@ class PickupController extends Controller
         return view('admin.pickups.edit', compact('pickup'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, string $id)
     {
-        $pickup = Pickup::findOrFail($id);
-
-        // Validasi bersih tanpa kelurahan_pengambilan
+        // 1. Validasi data menggunakan nama kolom yang BARU
         $validated = $request->validate([
-            'alamat_penerima' => 'required|string',
-            'kota_pengambilan' => 'required|string',
-            'wa_pengirim' => 'required|string',
-            'kecamatan_pengambilan' => 'required|string',
-            'alamat_pickup' => 'required|string',
-            'jenis_paket' => 'required|string',
-            'berat' => 'required|integer|min:1',
-            'panjang' => 'nullable|integer',
-            'lebar' => 'nullable|integer',
-            'tinggi' => 'nullable|integer',
-            'status' => 'required|in:Menunggu,Kurir Menuju Lokasi,Selesai / Paket Diambil,Batal',
+            'status'    => 'required|string',
+            'kurir'     => 'nullable|string|max:255',
+            'nama'      => 'required|string|max:255',
+            'nomer_wa'  => 'required|string',
+            'kecamatan' => 'required|string',
+            'kelurahan' => 'required|string',
+            'koordinat' => 'nullable|string',
+            'jenis'     => 'required|string',
+            'berat'     => 'required|integer|min:1',
+            'alamat'    => 'required|string',
         ]);
 
-        // Suntikkan nilai default untuk kolom yang sudah tidak dipakai
-        $validated['kota_tujuan'] = '-';
-        $validated['kecamatan_tujuan'] = '-';
-        $validated['kelurahan_pengambilan'] = '-';
+        // 2. Cari data pickup yang ingin diedit berdasarkan ID
+        $pickup = \App\Models\Pickup::findOrFail($id);
 
+        // 3. Update data yang ada di database dengan data baru dari form
         $pickup->update($validated);
 
-        return redirect()->route('admin.pickups.index')->with('success', 'Data & Status Pickup berhasil diperbarui!');
+        // 4. Arahkan kembali ke halaman tabel dengan pesan sukses
+        return redirect()->route('admin.pickups.index')->with('success', 'Data dan status pickup berhasil diperbarui!');
     }
 
     public function destroy($id)
@@ -87,6 +84,7 @@ class PickupController extends Controller
             'Titik Koordinat',
             'Jenis Paket', 
             'Berat (Kg)', 
+            'Nama Kurir',
             'Status'
         ];
 
@@ -110,6 +108,7 @@ class PickupController extends Controller
                     $pickup->koordinat ?? '-', // Beri tanda strip jika koordinat kosong
                     $pickup->jenis,
                     $pickup->berat,
+                    $pickup->kurir ?? 'Belum Ditugaskan',
                     $pickup->status
                 ];
 
